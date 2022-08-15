@@ -1,0 +1,9 @@
+/node_modules
+/public/storage
+/vendor
+.env
+/storage/app/public
+/storage/logs
+.idea/
+/public/uploaded
+/storage/framework/laravel-excel

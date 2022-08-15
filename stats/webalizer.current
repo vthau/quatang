@@ -1,0 +1,721 @@
+# Webalizer V2.23-08 Incremental Data - 05/05/2021 08:53:29
+2021 5 5 8 53 29
+1994 1956 9 233 41 10 99119779 462 14 0
+4 83 597 4 5
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+1205 1172 59968684 8 306 10
+789 784 39151095 4 156 4
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+597 592 33729452 51
+40 40 982379 34
+29 29 60555 28
+218 213 9810251 42
+473 461 27111353 121
+121 121 5233067 29
+139 139 6169768 22
+0 0 0 0
+0 0 0 0
+5 1 145662 5
+93 93 5923839 12
+115 115 2718709 55
+161 149 7233577 60
+3 3 1167 3
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0
+0
+0
+1956
+0
+0
+0
+0
+0
+12
+0
+0
+7
+0
+0
+0
+0
+0
+0
+0
+0
+9
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+10
+0
+0
+0
+0
+0
+# -urls- 
+/public/themes/be/css/coreui/vendors/pace-progress/js/pace.min.js
+0 6 8083238271023279471 75048 0 0
+/public/uploaded/product/product_logo_17.jpg
+1 5 8602288 95185 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/line-awesome.min2fc9.css
+0 16 8643424 1312672 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_currencies.min.js
+0 13 8658864 382759 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/cat.min.js
+0 15 0 648750 0 0
+/gioi-thieu
+0 2 8566656 120645 0 0
+/public/images/icons/ic_user_dark.png
+1 6 8644368 2946 0 0
+/public/uploaded/sys_event/event_logo_4.jpg
+1 1 8606960 130641 0 0
+/public/uploaded/product_brand/brand_logo_10.png
+1 8 8639392 116752 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_theme.min.js
+0 14 8657968 229740 0 0
+/public/uploaded/product_brand/brand_logo_7.png
+1 13 8647216 162227 0 0
+/admin/settings
+0 4 8661328 133169 0 0
+/public/uploaded/sys/sys_logo.png
+1 11 8610736 43670 0 0
+/public/themes/fe/css/main/main.css
+0 15 8657344 453555 0 0
+/public/libraries/currency/simple.number.format.js
+0 6 8646064 12828 0 0
+/public/themes/be/css/coreui/vendors/pace-progress/css/pace.min.css
+0 6 273 11820 0 0
+/public/css/ttv/header.css
+0 14 8638304 27566 0 0
+/public/uploaded/product/product_logo_2.jpg
+1 8 8602000 589520 0 0
+/public/libraries/upload/jquery.ui.widget.js
+0 1 8609376 23509 0 0
+/public/uploaded/product/product_logo_16.jpg
+1 13 8641280 846586 0 0
+/public/images/icons/ic_tick_dark.png
+1 1 8579984 503 0 0
+/san-pham/delicious-gifts
+0 1 8601296 157048 0 0
+/danh-muc/cao-cap-2021
+0 1 8606096 59779 0 0
+/public/images/logo/favicon.ico
+0 5 8660928 172470 0 0
+/public/uploaded/sys/sys_logo.jpg
+1 10 8638192 368950 0 0
+/public/uploaded/sys_news/news_logo_4.jpg
+1 4 8565072 182976 0 0
+/public/uploaded/product_brand/brand_logo_8.png
+1 6 8599920 120222 0 0
+/get-card
+0 3 8604016 324 0 0
+/public/uploaded/sys/home_banner_4.jpg
+1 4 8640288 467496 0 0
+/thuong-hieu
+0 6 8566352 729433 1 1
+/sp/buy
+0 1 8602432 4170 0 0
+/tin/qua-tang-tet-cho-doanh-nghiep
+0 3 8565936 239773 0 0
+/public/libraries/upload/jquery.iframe-transport.js
+0 1 8609632 11115 0 0
+/public/uploaded/product/product_logo_13.jpg
+1 8 8576112 157672 0 0
+/public/uploaded/product/product_logo_10.jpg
+1 10 8601712 500940 0 0
+/public/uploaded/product/product_logo_19.jpg
+1 9 8602144 599967 0 0
+/public/images/cod.png
+1 1 8603296 1231 0 0
+/sp/random
+0 296 8642224 112538 1 1
+/public/images/google.png
+1 4 8663952 5192 0 0
+/chinh-sach-doi-tra
+0 1 8604672 60046 0 0
+/public/images/icons/ic_logout_dark.png
+1 6 8644448 2988 0 0
+/public/images/facebook.png
+1 4 8639312 2352 0 0
+/public/uploaded/user/p_user_avatar_5.jpg
+1 1 8580400 13331 0 0
+/public/uploaded/sys_event/event_logo_2.jpg
+1 1 8606816 114832 0 0
+/public/uploaded/product/product_logo_24.jpg
+1 13 8601856 432289 0 0
+/public/uploaded/product/product_logo_11.jpg
+1 14 8576256 258524 0 0
+/public/uploaded/card/card_slide_5_1610427685_1.jpg
+1 1 8604128 74547 0 0
+/admin/product-categories
+0 1 8580688 70092 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_vendor.min455d.js
+0 17 8663184 4161243 0 0
+/public/uploaded/product_brand/brand_logo_12.jpg
+1 4 8600352 557948 0 0
+/lien-he
+0 3 8566192 188979 0 0
+/public/themes/be/css/auth/theme.css
+0 2 8641888 499934 0 0
+/public/images/shipping_fast.png
+1 1 8603040 1578 0 0
+/public/js/back_end/product_brands.js
+0 1 8581184 5968 0 0
+/thuong-hieu/qua-tang-minh-pha-le
+0 1 8565648 87968 0 0
+/public/libraries/upload/jquery.fileupload.js
+0 1 8609776 66282 0 0
+/public/themes/be/css/login.css
+0 2 8641728 1172 0 0
+/public/libraries/zoom/magiczoomplus.css
+0 2 8576544 88524 0 0
+/thuong-hieu/bvlgari
+0 1 8567392 83109 0 0
+/public/uploaded/sys/home_banner_2.jpg
+1 8 8662768 2208272 0 0
+/public/images/vnpay.jpg
+1 1 8603536 10178 0 0
+/danh-muc/sinh-nhat
+0 1 8605872 59772 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/pre_theme.minb2aa.css
+0 16 8662416 1806416 0 0
+/public/images/zalopay.png
+1 1 8603664 10472 0 0
+/public/uploaded/product_brand/brand_logo_5.png
+1 6 8600208 133560 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/module.min.js
+0 12 0 24936 0 0
+/public/uploaded/sys_event/event_logo_6.jpg
+1 14 8639472 1706166 0 0
+/public/uploaded/user_supplier/supplier_logo_2.png
+1 1 8578800 40127 0 0
+/san-pham
+0 5 8566272 888730 1 0
+/public//uploaded/sys/home_cate_1.jpg
+1 13 8643696 614211 0 0
+/public/js/back_end/1_index.js
+0 6 8644288 28872 0 0
+/public/uploaded/product_brand/brand_logo_9.png
+1 10 8664960 40810 0 0
+/public//uploaded/sys/home_cate_2.jpg
+1 15 8643776 627765 0 0
+/public/js/ttv/fe/
+0 16 8652880 1057472 0 0
+/admin/suppliers
+0 1 8578016 39040 0 0
+/public/libraries/viewer/jquery.magnify.js
+0 16 8661776 1266592 0 0
+/public/uploaded/product/product_logo_3.jpg
+1 13 8640992 804622 0 0
+/public/uploaded/product_brand/brand_logo_13.jpg
+1 7 8600064 110859 0 0
+/public/uploaded/sys_news/news_logo_3.jpg
+1 6 8565216 136344 0 0
+/san-pham/but-ky-cao-cap-ngoc-trai-xanh-abalone-hermess-blu010
+0 1 0 162287 0 0
+/public/uploaded/product_brand/brand_logo_1.jpg
+1 10 8663408 144470 0 0
+/public/js/back_end/user_suppliers.js
+0 1 8578128 5661 0 0
+/public/ttv/theme/s/javascripts/currencies.js
+0 12 8657600 36228 0 0
+/public/images/shipping.png
+1 1 8603168 1775 0 0
+/public/uploaded/product/product_logo_22.jpg
+1 24 8640560 791664 0 0
+/public/uploaded/product/product_logo_1.jpg
+1 16 8640848 992560 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/la-regular-400.woff2
+0 11 8643280 141900 0 0
+/public/js/back_end/orders.js
+0 2 8601072 12546 0 0
+/public/js/back_end/staffs.js
+0 1 8579760 2300 0 0
+/admin/orders
+0 2 8600960 89868 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/customerclnt.min.js
+0 12 8660576 68784 0 0
+/chinh-sach-thanh-vien
+0 1 8611088 60046 0 0
+/public/uploaded/product/p_product_logo_13.jpg
+1 1 8602800 15922 0 0
+/public/themes/fe/css/main/Style1.css
+0 14 8658016 12348 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_settings.js
+0 13 49 20254 0 0
+/favicon.ico
+0 4 8608352 137976 0 0
+/public/uploaded/product/product_slide_13_1610182063_2.png
+1 3 0 519591 0 0
+/public/uploaded/sys_event/event_logo_3.jpg
+1 1 8606672 35184 0 0
+/admin/levels
+0 1 8579088 31117 0 0
+/public/uploaded/user_supplier/supplier_logo_1.jpg
+1 1 8578944 23875 0 0
+/public/themes/be/js/auth.js
+0 2 8641968 8098 0 0
+/public/themes/fe/css/custom_mobile.css
+0 14 8646528 22106 0 0
+/san-pham/but-ky-cao-cap-ngoc-trai-den-vang-hong-liah
+0 1 8576400 168468 0 0
+/public/uploaded/sys_event/n_event_logo_5.jpg
+1 10 8664704 273150 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/iconKalles2d00.ttf
+0 13 8645184 110812 0 0
+/public/js/ttv/fe/auth.js
+0 15 8637856 133440 0 0
+/public/uploaded/product/n_product_logo_12.jpg
+1 1 8576992 37585 0 0
+/tu-van/goi-y-20-mon-qua-tang-me-sinh-nhat-y-nghia-nhat
+0 3 8607248 256210 0 0
+/public/uploaded/product/product_logo_20.jpg
+1 16 8642304 1015744 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/la-solid-900.woff2
+0 14 0 1354528 0 0
+/public/uploaded/sys_event/n_event_logo_1.jpg
+1 10 8660016 280970 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/produc.min.js
+0 14 25769803776 890554 0 0
+/public//uploaded/sys/home_cate_3.jpg
+1 15 8642976 1302825 0 0
+/public/uploaded/sys_news/news_logo_2.jpg
+1 7 8565360 433524 0 0
+/admin/account
+0 1 8609264 62551 0 0
+/public/uploaded/sys_event/event_logo_1.jpg
+1 1 8607104 137774 0 0
+/public/uploaded/sys/home_banner_3.jpg
+1 9 8662848 733311 0 0
+/public/libraries/sticky/jquery.sticky.js
+0 15 8657936 155595 0 0
+/public/uploaded/sys_event/n_event_logo_4.jpg
+1 10 8659232 295650 0 0
+/public/uploaded/product_brand/brand_logo_11.jpg
+1 13 8647024 67652 0 0
+/public/libraries/font-awesome/css/all.css
+0 18 8638576 1349028 0 0
+/public/themes/be/js/jquery.min.js
+0 19 8638080 1646825 0 0
+/public/css/be/custom.css
+0 6 8642688 4284 0 0
+/admin/product-brands
+0 2 8581072 143838 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/theme.scss9c56.css
+0 15 8660768 156600 0 0
+/public/uploaded/product/product_logo_4.jpg
+1 13 8640416 228540 0 0
+/public/uploaded/sys/home_banner_mobi_1.jpg
+1 3 8607392 596124 0 0
+/public/favicon.ico
+0 12 8639552 413928 0 0
+/public/css/ttv/custom.css
+0 15 8638832 259875 0 0
+/public/uploaded/card/card_slide_6_1610427723_1.jpg
+1 1 8604272 62112 0 0
+/public/uploaded/user_supplier/supplier_logo_3.png
+1 1 8578656 8330 0 0
+/public/themes/fe/css/main/jquery-ui.css
+0 14 8564816 77644 0 0
+/public/js/main.js
+0 20 8637744 86000 0 0
+/login
+0 2 8660240 11780 0 0
+/clear-cache
+0 4 8658704 32 0 0
+/admin/level/manage
+0 1 8579424 96552 0 0
+/public/js/back_end/product_categories.js
+0 1 8580816 7483 0 0
+/public/css/ttv/bai_viet.css
+0 1 8604896 963 0 0
+/public/libraries/zoom/magiczoomplus.js
+0 17 8662688 1594447 0 0
+/public/themes/be/css/bootstrap.min.css
+0 2 8642096 280926 0 0
+/public/uploaded/product/product_logo_14.jpg
+1 9 8567120 1333197 0 0
+/public/themes/be/css/coreui/vendors/flag-icon-css/css/flag-icon.min.css
+0 6 8663008 202908 0 0
+/public/themes/fe/css/main/style.css
+0 16 8657680 14431280 0 0
+/public/uploaded/sys/home_banner_1.jpg
+1 9 8658352 757890 0 0
+/public/libraries/uni-carousel/jquery.uni-carousel.css
+0 14 8653056 65968 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/sett_cl1c1e.css
+0 14 1 0 0 0
+/public/themes/fe/css/main/bootstrap.min.css
+0 16 8639232 1938768 0 0
+/public/js/back_end/product_add.js
+0 1 8609024 4538 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/interactable.min.js
+0 13 8657424 369343 0 0
+/public/uploaded/product/product_slide_11_1610181854_1.jpg
+1 3 0 185796 0 0
+/public/uploaded/card/card_slide_7_1610427734_1.jpg
+1 1 8604416 59482 0 0
+/public/themes/be/css/coreui/vendors/coreui/coreui-pro/js/coreui.bundle.js
+0 6 8645840 1230588 0 0
+/chinh-sach-giao-hang
+0 1 8604560 60042 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/swatch.min.js
+0 15 7867849217131440488 863040 0 0
+/public/libraries/font-awesome/webfonts/fa-solid-900.woff2
+0 16 2334393406631995680 1211648 0 0
+/public/uploaded/product_brand/brand_logo_4.jpg
+1 10 8600496 74600 0 0
+/public/uploaded/user/p_user_avatar_4.png
+1 1 8580544 20850 0 0
+/public/libraries/currency/simple.money.format.js
+0 6 8645920 18642 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/lazysizes.minc3ed.js
+0 17 8638704 613496 0 0
+/public/ttv/theme/s/assets/themes_support/shopify_common-8ea6ac3faf357236a97f5de749df4da6e8436ca107bc3a4ee805cbf08bc47392.js
+0 12 8664256 25164 0 0
+/public/themes/fe/css/main/cssphone.min.css
+0 14 8658192 5600 0 0
+/thuong-hieu/thuong-hieu-moi
+0 1 8565728 59472 0 0
+/dh/pgh
+0 1 8603792 28 0 0
+/public/uploaded/product/product_logo_21.jpg
+1 18 8641568 1147352 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/fakallesa043.woff2
+0 11 8657856 132396 0 0
+/public/libraries/select2/select2.min.css
+0 6 8642768 91182 0 0
+/public/uploaded/product/product_logo_23.jpg
+1 19 8641424 331075 0 0
+/public/images/logo/apple-touch-icon-57x57.png
+1 1 8608688 109 0 0
+/tin/qua-tang-but-ky-ten-dep-gia-re
+0 4 8566064 289668 0 0
+/public/uploaded/product/product_logo_7.jpg
+1 16 8608208 363393 0 0
+/tin/bi-kip-mua-qua-tang-doi-tac-doc-dao-y-nghia
+0 3 8605328 256494 0 0
+/
+0 42 8663328 5301697 10 2
+/public/libraries/select2/select2.min.js
+0 6 0 399990 0 0
+/public/uploaded/product_brand/brand_logo_6.png
+1 10 8652624 139870 0 0
+/public/uploaded/user_supplier/supplier_logo_4.png
+1 1 8578512 18938 0 0
+/goc-tu-van
+0 4 8566432 296160 0 0
+/public/libraries/uni-carousel/jquery.uni-carousel.js
+0 15 8638960 327750 0 0
+/public/uploaded/sys/home_banner_mobi_2.jpg
+1 4 8608064 741292 0 0
+/tin/top-nhung-qua-tang-khach-hang-mang-y-nghia-dep
+0 1 8605472 83364 0 0
+/thuong-hieu/blusaigon
+0 2 8565856 190670 0 1
+/public/themes/fe/css/main/AllinOne.css
+0 16 8639104 1804304 0 0
+/san-pham/hop-qua-tet-cao-cap-tet-viet-2021-she-chocolate
+0 1 0 168275 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/style.min9d6d.css
+0 16 3 2633200 0 0
+/get-opts-card
+0 1 8603904 106 0 0
+/admin/products
+0 2 8600640 451124 0 0
+/public/uploaded/product_brand/brand_logo_2.jpg
+1 9 8660096 132993 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/my.js
+0 12 4684046115601907712 0 0 0
+/public/uploaded/user_supplier/supplier_logo_5.jpg
+1 1 8578368 14430 0 0
+/public/css/app.css
+0 6 8665472 71994 0 0
+/gio-hang
+0 1 8602688 100950 0 0
+/public/uploaded/sys/sys_backdrop.png
+1 6 8566768 2519412 0 0
+/public/js/back_end/products.js
+0 2 8600720 7858 0 0
+/public/uploaded/product/n_product_logo_11.jpg
+1 1 8577136 14910 0 0
+/public/uploaded/sys_event/event_logo_5.jpg
+1 1 8606320 128427 0 0
+/public/uploaded/product_brand/brand_logo_14.jpg
+1 4 8646656 95008 0 0
+/public/uploaded/product/product_logo_8.jpg
+1 18 8641136 825210 0 0
+/public/themes/be/css/general.css
+0 2 8641808 212 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/Pe-icon-7-strokebb1d.woff
+0 14 8662496 819784 0 0
+/public/uploaded/product/product_slide_13_1610182063_1.jpg
+1 3 0 124566 0 0
+/admin
+0 3 8662928 61711 0 0
+/public/uploaded/product/product_logo_5.jpg
+1 13 8601424 436557 0 0
+/public/themes/fe/css/custom.css
+0 15 8666336 314040 0 0
+/public/images/banking.png
+1 1 8603408 1463 0 0
+/public/css/ttv/general.css
+0 14 8659632 64232 0 0
+/public/images/icons/ic_bell_dark.png
+1 6 8644208 2808 0 0
+/public/uploaded/product/product_logo_6.jpg
+1 24 8640704 1165689 0 0
+/admin/product/add
+0 1 8608912 96877 0 0
+/public/uploaded/product/product_slide_11_1610181854_2.jpg
+1 3 0 83469 0 0
+/robots.txt
+0 3 8659936 0 0 0
+/public/uploaded/sys_event/n_event_logo_2.jpg
+1 8 8663872 232464 0 0
+/public/uploaded/sys_news/news_logo_1.jpg
+1 6 8565504 343560 0 0
+/danh-muc/qua-tang
+0 1 8605616 125113 0 0
+/public/uploaded/user/p_user_avatar_3.jpg
+1 1 8580256 18229 0 0
+/public/uploaded/sys_event/n_event_logo_3.jpg
+1 10 8652512 205910 0 0
+/public/uploaded/product/product_logo_12.jpg
+1 10 8575904 489430 0 0
+/public/uploaded/user/p_user_avatar_9.png
+1 1 8580112 18835 0 0
+/public/uploaded/product/product_logo_15.jpg
+1 5 8577872 269380 0 0
+/public/libraries/viewer/jquery.magnify.css
+0 15 8663600 137700 0 0
+/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_instagram.min.js
+0 12 8661616 33612 0 0
+/public/js/back_end/user_info.js
+0 1 8609920 4117 0 0
+/danh-muc/dong-ho
+0 1 8605984 59775 0 0
+/public/js/back_end/levels.js
+0 1 8579200 2754 0 0
+/public/uploaded/product/product_logo_18.jpg
+1 11 8601568 506308 0 0
+/public/uploaded/product_brand/brand_logo_3.jpg
+1 3 8664032 107151 0 0
+/thuong-hieu/aaa-promotional-gifts
+0 2 8566992 163908 1 1
+/public/uploaded/product/product_logo_9.jpg
+1 16 8577728 542224 0 0
+/public/uploaded/product/product_slide_13_1610182063_3.jpg
+1 3 0 137232 0 0
+/public/images/default_user.png
+1 6 8660848 47508 0 0
+/admin/staffs
+0 1 8579536 58229 0 0
+/public/themes/be/css/coreui/vendors/css/style.css
+0 6 8665712 2430882 0 0
+/public/images/star_empty.png
+1 2 8577280 1564 0 0
+/public/uploaded/product/n_product_logo_13.jpg
+1 1 8602544 15922 0 0
+/tin-tuc
+0 2 8566544 137336 0 0
+# End Of Table - urls
+# -sites- (monthly)
+ns535995.ip-139-99-8.net
+0 1 1 139536 1 1620107863
+/
+49.213.78.31
+0 3 3 103482 0 0
+-
+8.38.148.219
+0 371 371 15737574 1 1620140740
+/sp/random
+ec2-34-251-241-226.eu-west-1.compute.amazonaws.com
+0 5 1 145662 1 1620128086
+-
+ns563587.ip-139-99-62.net
+0 1 1 140456 1 1620183832
+/
+static.vnpt.vn
+0 882 874 43964264 3 1620204807
+/
+167.99.53.107
+0 1 1 139718 1 1620138989
+/
+8.21.11.70
+0 728 714 38471390 4 1620117558
+/sp/random
+dynamic-ip-adsl.viettel.vn
+0 2 2 277697 2 1620183988
+/
+# End Of Table - sites (monthly)
+# -sites- (daily)
+49.213.78.31
+0 1 1 34494 0 0
+-
+ns563587.ip-139-99-62.net
+0 1 1 140456 1 1620183832
+/
+static.vnpt.vn
+0 786 781 38836488 2 1620204807
+/
+dynamic-ip-adsl.viettel.vn
+0 1 1 139657 1 1620183988
+/
+# End Of Table - sites (daily)
+# -referrers- 
+http://quatang.geckoso.com/admin/product/add
+0 2
+http://quatang.geckoso.com/tin-tuc
+0 8
+http://demo-quatang.geckoso.com/admin
+0 18
+http://quatang.geckoso.com/admin/account
+0 5
+http://quatang.geckoso.com/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/line-awesome.min2fc9.css
+0 11
+http://quatang.geckoso.com/goc-tu-van
+0 6
+http://quatang.geckoso.com/thuong-hieu/aaa-promotional-gifts
+0 5
+http://quatang.geckoso.com/gio-hang
+0 16
+http://quatang.geckoso.com/admin/product-brands
+0 12
+http://demo-quatang.geckoso.com/login
+0 8
+http://demo-quatang.geckoso.com/public/libraries/font-awesome/css/all.css
+0 9
+http://quatang.geckoso.com/chinh-sach-doi-tra
+0 1
+- (Direct Request)
+0 47
+http://quatang.geckoso.com/danh-muc/dong-ho
+0 3
+http://demo-quatang.geckoso.com/clear-cache
+0 4
+http://quatang.geckoso.com/san-pham/but-ky-cao-cap-ngoc-trai-den-vang-hong-liah
+0 55
+http://quatang.geckoso.com/danh-muc/cao-cap-2021
+0 2
+http://quatang.geckoso.com/thuong-hieu/blusaigon
+0 5
+http://quatang.geckoso.com/admin/levels
+0 2
+http://quatang.geckoso.com/admin/product-categories
+0 2
+http://demo-quatang.geckoso.com/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/style.min9d6d.css
+0 21
+http://quatang.geckoso.com/admin
+0 36
+http://quatang.geckoso.com/public/libraries/font-awesome/css/all.css
+0 7
+http://quatang.geckoso.com/lien-he
+0 4
+http://quatang.geckoso.com/admin/orders
+0 24
+http://quatang.geckoso.com/admin/staffs
+0 7
+http://quatang.geckoso.com/admin/level/manage
+0 1
+http://quatang.geckoso.com/chinh-sach-giao-hang
+0 1
+http://quatang.geckoso.com/
+0 787
+http://quatang.geckoso.com/tu-van/goi-y-20-mon-qua-tang-me-sinh-nhat-y-nghia-nhat
+0 1
+http://quatang.geckoso.com/san-pham/but-ky-cao-cap-ngoc-trai-xanh-abalone-hermess-blu010
+0 110
+http://quatang.geckoso.com/login
+0 8
+http://demo-quatang.geckoso.com/admin/settings
+0 59
+http://quatang.geckoso.com/tin/bi-kip-mua-qua-tang-doi-tac-doc-dao-y-nghia
+0 6
+http://demo-quatang.geckoso.com/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/line-awesome.min2fc9.css
+0 14
+http://quatang.geckoso.com/admin/products
+0 4
+http://quatang.geckoso.com/gioi-thieu
+0 8
+http://quatang.geckoso.com/admin/suppliers
+0 7
+http://quatang.geckoso.com/public/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/style.min9d6d.css
+0 17
+http://demo-quatang.geckoso.com/
+0 642
+http://quatang.geckoso.com/chinh-sach-thanh-vien
+0 9
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36 _zbot
+0 2
+Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)
+0 1
+Mozilla/5.0 (Linux; Android 7.0; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4420.0 Mobile Safari/537.36 C
+0 178
+Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Mobile Safari/537.3
+0 3
+Mozilla/5.0 (iPhone; CPU iPhone OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B179 Safari/
+0 2
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+0 1001
+Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2225.0 Safari/537.36
+0 5
+ZaloPC-win32-24v414
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36 _zbot
+0 3
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+0 798
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

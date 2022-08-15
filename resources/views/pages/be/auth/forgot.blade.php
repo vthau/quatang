@@ -1,0 +1,111 @@
+<?php
+$apiCore = new \App\Api\Core;
+$viewer = $apiCore->getViewer();
+
+$apiMobile = new \App\Api\Mobile;
+$isMobile = $apiMobile->isMobile() ? 1 : 0;
+
+$maxSize = $apiCore->getMaxSize();
+$maxSizeText = $apiCore->getMaxSizeText();
+
+$pageTitle = (isset($page_title)) ? $page_title : $apiCore->getPageTitle();
+$siteTitle = $apiCore->getSetting('site_title');
+$siteLogo = $apiCore->getSetting('site_logo');
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="{{$pageTitle}}">
+    <meta name="author" content="Geckoso">
+    <meta name="keyword" content="{{$pageTitle}}">
+    <title>{{$pageTitle}}</title>
+
+    <link rel="shortcut icon" href="{{url('public/images/logo/favicon.ico')}}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{url('public/images/logo/apple-touch-icon.png')}}" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{url('public/images/logo/apple-touch-icon-57x57.png')}}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{url('public/images/logo/apple-touch-icon-72x72.png')}}" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{url('public/images/logo/apple-touch-icon-76x76.png')}}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{url('public/images/logo/apple-touch-icon-114x114.png')}}" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{url('public/images/logo/apple-touch-icon-120x120.png')}}" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{url('public/images/logo/apple-touch-icon-144x144.png')}}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{url('public/images/logo/apple-touch-icon-152x152.png')}}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url('public/images/logo/apple-touch-icon-180x180.png')}}" />
+
+    <link href="{{url('public/themes/be/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url('public/themes/be/css/auth/theme.css')}}" rel="stylesheet">
+    <link href="{{url('public/themes/be/css/login.css')}}" rel="stylesheet">
+    <link href="{{url('public/themes/be/css/general.css')}}" rel="stylesheet">
+
+    {{--jquery--}}
+    <script src="{{url('public/themes/be/js/jquery.min.js')}}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var gks = {
+            baseURL: '{{url('')}}',
+            loading: 'Đang xử lý...',
+            loadingUPLOADPHOTO: '{{url('public/images/loading_img.jpg')}}',
+            successADD: 'Đã thêm thành công!',
+            successEDIT: 'Đã sửa thành công!',
+            successDEL: 'Đã xóa thành công!',
+            successUPDATE: 'Đã cập nhật thành công!',
+            successCHANGE: 'Đã cập nhật thành công!',
+            saveERR: "Không thể kết nối. Vui lòng thử lại sau.",
+            loadingIMG: '<div class="frm-loading js-loading"><img src="{{url('public/images/icons/ic_loading.png')}}"></div>',
+            maxSize: '{{$maxSize}}',
+            maxSizeText: '{{$maxSizeText}}',
+            tempTK: '{{csrf_token()}}',
+            importExcelOnly: "Vui lòng chỉ import excel file.",
+            isMobile: '{{$isMobile}}',
+            user: '{{$viewer && $viewer->id ? $viewer->id : 0}}',
+        };
+    </script>
+</head>
+
+<body class="bg-e5">
+
+<div class="container">
+    <div class="login-wrap">
+        <div class="login-content">
+            <div class="login-logo">
+                <img class="img-logo" src="{{$siteLogo}}" alt="{{$siteTitle}}">
+                <span class="img-logo-txt">{{$siteTitle}}</span>
+            </div>
+            <div class="login-form" id="frm-forgot">
+                <form method="POST" action="" accept-charset="UTF-8" onsubmit="return doForgot()" autocomplete="off" >
+                    <input type="hidden" name="_token" id="_tks" value="{{csrf_token()}}" />
+                    <input type="hidden" id="frm-base-url" value="{{url('')}}" />
+
+                    <div class="form-group">
+                        <div class="alert alert-warning">
+                            Hãy nhập địa chỉ email của bạn, chúng tôi sẽ gửi email kích hoạt lấy lại mật khẩu sau ít phút.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input autocomplete="off" class="au-input au-input--full" type="email" name="email" id="frm-email" placeholder="email">
+                    </div>
+                    <div class="form-group" id="err-email">
+                        <div class="alert alert-danger hidden">Hãy nhập email hợp lệ.</div>
+                    </div>
+
+                    <button class="au-btn au-btn--block au-btn--green m-b-20" type="button" onclick="doForgot()">gửi yêu cầu</button>
+
+                    <div class="hidden">
+                        <input type="submit" class="hidden" value="submit" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{url('public/themes/be/js/auth.js')}}" type="text/javascript"></script>
+
+</body>
+</html>

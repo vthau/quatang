@@ -1,0 +1,79 @@
+@media only screen and (max-width: 768px) {
+    .last-news-item.col-md-3,
+    .last-event-item.col-md-3,
+    .top-brand-item.col-md-2,
+    .new-p-item.col-md-2 {
+        float: left;
+        width: 50%;
+    }
+
+    .top-brand-item.col-md-2 {
+        margin-bottom: 10px;
+    }
+
+    #block-last-events,
+    #block-last-news,
+    #block-top-brands {
+        overflow: hidden;
+        padding: 10px 0;
+    }
+
+    .active-sale-item .active-sale-img {
+        height: 200px;
+    }
+
+    .fake-slide-next,
+    .fake-slide-prev {
+        width: 30px;
+        height: 30px;
+        margin-top: -15px;
+        font-size: 20px;
+        padding-left: 8px;
+        visibility: visible;
+    }
+
+    .fake-slide-next {
+        padding-left: 11px;
+    }
+
+    .site-footer .links .title {
+        overflow: hidden;
+        padding-top: 20px;
+    }
+
+    .listing-sale-item .sale-title,
+    .listing-event-item .event-title,
+    .listing-news-item .news-title {
+        margin-top: 20px;
+    }
+
+    .listing-sale-item .sale-more,
+    .listing-event-item .event-more,
+    .listing-news-item .news-more {
+        margin-right: 10px;
+    }
+
+    .listing-sale-item .sale-body,
+    .listing-event-item .event-body,
+    .listing-news-item .news-body {
+        height: 100px;
+    }
+
+    .listing-sale-item .sale-info-bot,
+    .listing-event-item .event-info-bot,
+    .listing-news-item .news-info-bot {
+        bottom: -5px;
+    }
+
+    .mobi_sm i {
+        font-size: 22px !important;
+    }
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 500px;
+        margin: 1.75rem auto;
+    }
+}
+

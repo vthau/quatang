@@ -1,0 +1,39 @@
+.bg-e5 {
+    background: #e5e5e5;
+}
+
+.login-wrap {
+    max-width: 540px;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+
+.login-content {
+    background: #fff;
+    padding: 30px 30px 20px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.login-logo {
+    background: #aaa;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.img-logo {
+    max-height: 50px;
+}
+
+.img-logo-txt {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.login-form {
+
+}
