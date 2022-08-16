@@ -612,7 +612,7 @@ class Core
         return $value;
     }
 
-    public function getTitleDisplay($setting)
+    public function getSettingDisplay($setting)
     {
         $row = Setting::where('title', $setting)->first();
         $value = ($row) ? $row->display : 0;

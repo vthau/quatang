@@ -155,11 +155,11 @@ $cates = $apiFE->getProductCategories(6);
                                     </li>
 
                                     @php
-                                        $displayClient = $apiCore->getTitleDisplay("policy_client");
-                                        $displayShipment = $apiCore->getTitleDisplay("policy_shipment");
-                                        $displayRefund = $apiCore->getTitleDisplay("policy_refund");
-                                        $displayPayment = $apiCore->getTitleDisplay("policy_payment");
-                                        $displaySecurity = $apiCore->getTitleDisplay("policy_security");
+                                        $displayClient = $apiCore->getSettingDisplay("policy_client");
+                                        $displayShipment = $apiCore->getSettingDisplay("policy_shipment");
+                                        $displayRefund = $apiCore->getSettingDisplay("policy_refund");
+                                        $displayPayment = $apiCore->getSettingDisplay("policy_payment");
+                                        $displaySecurity = $apiCore->getSettingDisplay("policy_security");
 
                                     @endphp
 

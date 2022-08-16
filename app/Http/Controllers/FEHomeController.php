@@ -132,7 +132,7 @@ class FEHomeController extends Controller
     //chinh-sach
     public function chinhSachThanhVien()
     {
-        $pageDisplay = $this->_apiCore->getTitleDisplay("policy_client");
+        $pageDisplay = $this->_apiCore->getSettingDisplay("policy_client");
         if ($pageDisplay == 0) {
             return redirect(403);
         }
@@ -148,7 +148,7 @@ class FEHomeController extends Controller
     }
     public function chinhSachGiaoHang()
     {
-        $pageDisplay = $this->_apiCore->getTitleDisplay("policy_shipment");
+        $pageDisplay = $this->_apiCore->getSettingDisplay("policy_shipment");
         if ($pageDisplay == 0) {
             return redirect(403);
         }
@@ -163,7 +163,7 @@ class FEHomeController extends Controller
     }
     public function chinhSachDoiTra()
     {
-        $pageDisplay = $this->_apiCore->getTitleDisplay("policy_refund");
+        $pageDisplay = $this->_apiCore->getSettingDisplay("policy_refund");
         if ($pageDisplay == 0) {
             return redirect(403);
         }
@@ -179,7 +179,7 @@ class FEHomeController extends Controller
 
     public function chinhSachThanhToan()
     {
-        $pageDisplay = $this->_apiCore->getTitleDisplay("policy_payment");
+        $pageDisplay = $this->_apiCore->getSettingDisplay("policy_payment");
         if ($pageDisplay == 0) {
             return redirect(403);
         }
@@ -194,7 +194,7 @@ class FEHomeController extends Controller
     }
     public function chinhSachBaoMat()
     {
-        $pageDisplay = $this->_apiCore->getTitleDisplay("policy_security");
+        $pageDisplay = $this->_apiCore->getSettingDisplay("policy_security");
         if ($pageDisplay == 0) {
             return redirect(403);
         }

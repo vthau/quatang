@@ -19,6 +19,8 @@ $link2 = $apiCore->getSetting('banner_link_2');
 $link3 = $apiCore->getSetting('banner_link_3');
 $link4 = $apiCore->getSetting('banner_link_4');
 
+$displayBanner = $apiCore->getSetting("display_banner");
+
 ?>
 
 <style data-shopify>
@@ -43,7 +45,7 @@ $link4 = $apiCore->getSetting('banner_link_4');
         }
     }
 
-    #nt_1585640154849 .nt_img_txt > a:after {
+    #nt_1585640154849 .nt_img_txt>a:after {
         background-color: #000;
         opacity: 0.0
     }
@@ -140,7 +142,7 @@ $link4 = $apiCore->getSetting('banner_link_4');
         color: #ffffff
     }
 
-    #nt_1585640159361 .nt_img_txt > a:after {
+    #nt_1585640159361 .nt_img_txt>a:after {
         background-color: #000;
         opacity: 0.0
     }
@@ -237,7 +239,7 @@ $link4 = $apiCore->getSetting('banner_link_4');
         color: #ffffff
     }
 
-    #nt_1585640162346 .nt_img_txt > a:after {
+    #nt_1585640162346 .nt_img_txt>a:after {
         background-color: #000;
         opacity: 0.0
     }
@@ -357,22 +359,18 @@ $link4 = $apiCore->getSetting('banner_link_4');
     }
 </style>
 
+@if($displayBanner == 1)
 <div id="shopify-section-1581505806578" class="shopify-section nt_section type_slideshow type_carousel">
     <div class="SlideshowWrapper nt_se_1581505806578 nt_full se_height_cus_h nt_first">
-        <div class="fade_flick_1 slideshow row no-gutters equal_nt nt_slider js_carousel prev_next_0 btn_owl_1 dot_owl_2 dot_color_1 btn_vi_2"
-            data-flickity='{ "fade":0,"cellAlign": "center","imagesLoaded": 0,"lazyLoad": 0,"freeScroll": 0,"wrapAround": true,"autoPlay" : 0,"pauseAutoPlayOnHover" : true, "rightToLeft": false, "prevNextButtons": false,"pageDots": true, "contain" : 1,"adaptiveHeight" : 1,"dragThreshold" : 5,"percentPosition": 1 }'>
+        <div class="fade_flick_1 slideshow row no-gutters equal_nt nt_slider js_carousel prev_next_0 btn_owl_1 dot_owl_2 dot_color_1 btn_vi_2" data-flickity='{ "fade":0,"cellAlign": "center","imagesLoaded": 0,"lazyLoad": 0,"freeScroll": 0,"wrapAround": true,"autoPlay" : 0,"pauseAutoPlayOnHover" : true, "rightToLeft": false, "prevNextButtons": false,"pageDots": true, "contain" : 1,"adaptiveHeight" : 1,"dragThreshold" : 5,"percentPosition": 1 }'>
             <div id="nt_1585640154849" class="col-12 slideshow__slide">
                 <a href="{{$link1}}">
                     <div class="oh pr nt_img_txt">
                         <div class="js_full_ht4 img_slider_block dek_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0"
-                                data-bgset="{{url('public/') . $bg1}}"
-                                data-ratio="3.096774193548387" data-sizes="auto"></div>
+                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg1}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
                         </div>
                         <div class="js_full_ht4 img_slider_block mb_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0"
-                                data-bgset="{{url('public/') . $bg1}}"
-                                data-ratio="3.096774193548387" data-sizes="auto"></div>
+                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg1}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
                         </div>
                         <div class="caption-wrap caption-w-1 pe_none z_100 tl_md tl">
                             <div class="pa_txts caption">
@@ -391,14 +389,10 @@ $link4 = $apiCore->getSetting('banner_link_4');
                 <a href="{{$link2}}">
                     <div class="oh pr nt_img_txt">
                         <div class="js_full_ht4 img_slider_block dek_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0"
-                                data-bgset="{{url('public/') . $bg2}}"
-                                data-ratio="3.0917874396135265" data-sizes="auto"></div>
+                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg2}}" data-ratio="3.0917874396135265" data-sizes="auto"></div>
                         </div>
                         <div class="js_full_ht4 img_slider_block mb_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0"
-                                data-bgset="{{url('public/') . $bg2}}"
-                                data-ratio="3.0917874396135265" data-sizes="auto"></div>
+                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg2}}" data-ratio="3.0917874396135265" data-sizes="auto"></div>
                         </div>
                         <div class="caption-wrap caption-w-1 pe_none z_100 tl_md tl">
                             <div class="pa_txts caption">
@@ -414,14 +408,10 @@ $link4 = $apiCore->getSetting('banner_link_4');
                 <a href="{{$link3}}">
                     <div class="oh pr nt_img_txt">
                         <div class="js_full_ht4 img_slider_block dek_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0"
-                                data-bgset="{{url('public/') . $bg3}}"
-                                data-ratio="3.096774193548387" data-sizes="auto"></div>
+                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg3}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
                         </div>
                         <div class="js_full_ht4 img_slider_block mb_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0"
-                                data-bgset="{{url('public/') . $bg3}}"
-                                data-ratio="3.096774193548387" data-sizes="auto"></div>
+                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg3}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
                         </div>
                         <div class="caption-wrap caption-w-1 pe_none z_100 tl_md tl">
                             <div class="pa_txts caption">
@@ -437,14 +427,10 @@ $link4 = $apiCore->getSetting('banner_link_4');
                 <a href="{{$link4}}">
                     <div class="oh pr nt_img_txt">
                         <div class="js_full_ht4 img_slider_block dek_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0"
-                                data-bgset="{{url('public/') . $bg4}}"
-                                data-ratio="3.096774193548387" data-sizes="auto"></div>
+                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg4}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
                         </div>
                         <div class="js_full_ht4 img_slider_block mb_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0"
-                                data-bgset="{{url('public/') . $bg4}}"
-                                data-ratio="3.096774193548387" data-sizes="auto"></div>
+                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg4}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
                         </div>
                         <div class="caption-wrap caption-w-1 pe_none z_100 tl_md tl">
                             <div class="pa_txts caption">
@@ -460,14 +446,16 @@ $link4 = $apiCore->getSetting('banner_link_4');
     </div>
 </div>
 
+@endif
 <script type="text/javascript">
-    jQuery(document).ready(function () {
-        setInterval(function () {
+    jQuery(document).ready(function() {
+        setInterval(function() {
             changeBG();
         }, 5888);
     });
 
     var curBG = 1;
+
     function changeBG() {
         var bind = jQuery('#shopify-section-1581505806578');
         curBG++;
@@ -477,7 +465,7 @@ $link4 = $apiCore->getSetting('banner_link_4');
         }
 
         var count = 0;
-        bind.find('.flickity-page-dots li').each(function (pos, ele) {
+        bind.find('.flickity-page-dots li').each(function(pos, ele) {
             count++;
 
             if (count === curBG) {

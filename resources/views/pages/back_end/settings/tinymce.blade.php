@@ -34,7 +34,7 @@ $viewer = $apiCore->getViewer();
                                             <label class="required">Hiển thị</label>
                                             <select class="form-control" name="display">
                                                 @php
-                                                    $display = $apiCore->getTitleDisplay($key);
+                                                    $display = $apiCore->getSettingDisplay($key);
                                                 @endphp
 
                                                 <option <?php if (isset($display) && $display == 1) : ?>selected="selected" <?php endif; ?> value="1">Bật</option>
