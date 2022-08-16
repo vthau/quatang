@@ -21,16 +21,14 @@ $viewer = $apiCore->getViewer();
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
     <div class="c-sidebar-brand">
         <a href="{{url('')}}">
-            <img class="c-sidebar-brand-full" src="{{$siteLogo}}"
-                 width="45" height="45" alt="{{$siteTitle}}" />
-            <img class="c-sidebar-brand-minimized" src="{{$siteLogo}}"
-                 width="45" height="45" alt="{{$siteTitle}}" />
+            <img class="c-sidebar-brand-full" src="{{$siteLogo}}" width="45" height="45" alt="{{$siteTitle}}" />
+            <img class="c-sidebar-brand-minimized" src="{{$siteLogo}}" width="45" height="45" alt="{{$siteTitle}}" />
         </a>
     </div>
 
     <ul class="c-sidebar-nav" data-drodpown-accordion="true">
         @if ($viewer->isAllowed('staff_user_view')
-            || $viewer->isAllowed("staff_level_view")
+        || $viewer->isAllowed("staff_level_view")
         )
         <li class="c-sidebar-nav-title parent_title">
             <i class="fa fa-user"></i>
@@ -47,12 +45,12 @@ $viewer = $apiCore->getViewer();
         </li>
         @endif
         @if ($viewer->isAllowed('user_supplier_view'))
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link" href="{{url('admin/suppliers')}}">
-                    <i class="fa fa-warehouse"></i>
-                    Nhà Cung Cấp
-                </a>
-            </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/suppliers')}}">
+                <i class="fa fa-warehouse"></i>
+                Nhà Cung Cấp
+            </a>
+        </li>
         @endif
         @if ($viewer->isAllowed("staff_user_view"))
         <li class="c-sidebar-nav-item">
@@ -65,10 +63,10 @@ $viewer = $apiCore->getViewer();
 
 
         @if ($viewer->isAllowed("product_category_view")
-            || $viewer->isAllowed("product_brand_view")
-            || $viewer->isAllowed("product_view")
-            || $viewer->isAllowed("product_dgcg_view")
-            || $viewer->isSupplier()
+        || $viewer->isAllowed("product_brand_view")
+        || $viewer->isAllowed("product_view")
+        || $viewer->isAllowed("product_dgcg_view")
+        || $viewer->isSupplier()
         )
         <li class="c-sidebar-nav-title parent_title">
             <i class="fa fa-boxes"></i>
@@ -85,12 +83,12 @@ $viewer = $apiCore->getViewer();
         </li>
         @endif
         @if ($viewer->isAllowed("product_brand_view") || $viewer->isSupplier())
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link" href="{{url('admin/product-brands')}}">
-                    <i class="fa fa-project-diagram"></i>
-                    Thương Hiệu
-                </a>
-            </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/product-brands')}}">
+                <i class="fa fa-project-diagram"></i>
+                Thương Hiệu
+            </a>
+        </li>
         @endif
         @if ($viewer->isAllowed("product_view") || $viewer->isSupplier())
         <li class="c-sidebar-nav-item">
@@ -102,42 +100,42 @@ $viewer = $apiCore->getViewer();
         @endif
 
         @if ($viewer->isAllowed("system_category_view")
-            || $viewer->isAllowed("wish_view")
-            || $viewer->isAllowed("card_template_view")
+        || $viewer->isAllowed("wish_view")
+        || $viewer->isAllowed("card_template_view")
         )
-            <li class="c-sidebar-nav-title parent_title">
-                <i class="fa fa-list"></i>
-                template
-            </li>
+        <li class="c-sidebar-nav-title parent_title">
+            <i class="fa fa-list"></i>
+            template
+        </li>
         @endif
         @if ($viewer->isAllowed("system_category_view"))
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link" href="{{url('admin/system-categories')}}">
-                    <i class="fa fa-object-group"></i>
-                    Nhóm Chủ Đề
-                </a>
-            </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/system-categories')}}">
+                <i class="fa fa-object-group"></i>
+                Nhóm Chủ Đề
+            </a>
+        </li>
         @endif
         @if ($viewer->isAllowed("wish_view"))
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link" href="{{url('admin/wishes')}}">
-                    <i class="fa fa-address-card"></i>
-                    Câu Chúc
-                </a>
-            </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/wishes')}}">
+                <i class="fa fa-address-card"></i>
+                Câu Chúc
+            </a>
+        </li>
         @endif
         @if ($viewer->isAllowed("card_template_view"))
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link" href="{{url('admin/cards')}}">
-                    <i class="fa fa-credit-card"></i>
-                    Mẫu Thiệp
-                </a>
-            </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/cards')}}">
+                <i class="fa fa-credit-card"></i>
+                Mẫu Thiệp
+            </a>
+        </li>
         @endif
 
         @if ($viewer->isAllowed("order_view")
-            || $viewer->isAllowed("order_config")
-            || $viewer->isSupplier()
+        || $viewer->isAllowed("order_config")
+        || $viewer->isSupplier()
         )
         <li class="c-sidebar-nav-title parent_title">
             <i class="fa fa-cart-plus"></i>
@@ -145,20 +143,20 @@ $viewer = $apiCore->getViewer();
         </li>
         @endif
         @if ($viewer->isAllowed("order_view") || $viewer->isSupplier())
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link" href="{{url('admin/orders')}}">
-                    <i class="fa fa-list"></i>
-                    Danh Sách
-                </a>
-            </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/orders')}}">
+                <i class="fa fa-list"></i>
+                Danh Sách
+            </a>
+        </li>
         @endif
         @if ($viewer->isAllowed("order_config"))
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link" href="{{url('admin/order-settings')}}">
-                    <i class="fa fa-cogs"></i>
-                    Tùy Chỉnh
-                </a>
-            </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/order-settings')}}">
+                <i class="fa fa-cogs"></i>
+                Tùy Chỉnh
+            </a>
+        </li>
         @endif
 
         @if ($viewer->isAllowed("client_view"))
@@ -176,13 +174,24 @@ $viewer = $apiCore->getViewer();
         </li>
         @endif
 
+        <li class="c-sidebar-nav-title parent_title">
+            <i class="fa fa-users"></i>
+            Banner
+        </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/banners')}}">
+                <i class="fa fa-list"></i>
+                Danh Sách
+            </a>
+        </li>
+
         @if ($viewer->isAllowed("setting_home")
-            || $viewer->isAllowed("setting_config")
-            || $viewer->isAllowed("setting_about")
-            || $viewer->isAllowed("setting_policy")
-            || $viewer->isAllowed("setting_tu_van")
-            || $viewer->isAllowed("setting_tin_tuc")
-            || $viewer->isAllowed("setting_contact")
+        || $viewer->isAllowed("setting_config")
+        || $viewer->isAllowed("setting_about")
+        || $viewer->isAllowed("setting_policy")
+        || $viewer->isAllowed("setting_tu_van")
+        || $viewer->isAllowed("setting_tin_tuc")
+        || $viewer->isAllowed("setting_contact")
         )
         <li class="c-sidebar-nav-title parent_title">
             <i class="fa fa-cog"></i>
@@ -247,12 +256,12 @@ $viewer = $apiCore->getViewer();
         </li>
         @endif
         @if ($viewer->isAllowed("setting_tu_van"))
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link" href="{{url('admin/events')}}">
-                    <i class="fa fa-info"></i>
-                    Góc Tư Vấn
-                </a>
-            </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/events')}}">
+                <i class="fa fa-info"></i>
+                Góc Tư Vấn
+            </a>
+        </li>
         @endif
         @if ($viewer->isAllowed("setting_tin_tuc"))
         <li class="c-sidebar-nav-item">
@@ -272,15 +281,14 @@ $viewer = $apiCore->getViewer();
         @endif
 
         @if ($viewer->isSuperAdmin())
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link" href="{{url('admin/texts')}}">
-                    <i class="fa fa-file-word"></i>
-                    Text Chữ
-                </a>
-            </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/texts')}}">
+                <i class="fa fa-file-word"></i>
+                Text Chữ
+            </a>
+        </li>
         @endif
     </ul>
 
-    <button class="c-sidebar-minimizer c-class-toggler hidden" type="button" data-target="_parent"
-            data-class="c-sidebar-unfoldable"></button>
+    <button class="c-sidebar-minimizer c-class-toggler hidden" type="button" data-target="_parent" data-class="c-sidebar-unfoldable"></button>
 </div>

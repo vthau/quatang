@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/clear-cache', function() {
+Route::get('/clear-cache', function () {
     Artisan::call('config:cache');
     Artisan::call('cache:clear');
     Artisan::call('view:clear');
@@ -94,6 +94,15 @@ Route::get('/admin/product/add', 'BEProductController@add');
 Route::post('/admin/product/save', 'BEProductController@save');
 Route::post('/admin/product/delete', 'BEProductController@delete');
 Route::post('/admin/product/update-status', 'BEProductController@updateStatus');
+
+//banner
+Route::get('/admin/banners', 'BEBannerController@index');
+Route::get('/admin/banner/add', 'BEBannerController@add');
+Route::post('/admin/banner/save', 'BEBannerController@save');
+Route::post('/admin/banner/delete', 'BEBannerController@delete');
+// Route::post('/admin/product/update-status', 'BEProductController@updateStatus');
+
+
 //contacts
 Route::get('/admin/contacts', 'BEContactController@index');
 Route::post('/admin/contact/delete', 'BEContactController@delete');
@@ -271,9 +280,6 @@ Route::get('/vnpay/callback', 'FECartController@vnpayCallback');
 Route::post('/dh/zalopay', 'FECartController@zalopayCreate');
 Route::get('/dh/zalopay/return', 'FECartController@zalopayReturn');
 
-Route::get('/403', function(){
+Route::get('/403', function () {
     return view("pages.front_end.403");
 });
-
-
-

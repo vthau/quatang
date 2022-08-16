@@ -4,26 +4,28 @@ $apiCore = new \App\Api\Core();
 $apiMobile = new \App\Api\Mobile;
 $isMobile = $apiMobile->isMobile();
 
-$bg1 = $isMobile ? $apiCore->getSetting('mobi_banner_bg_1') : $apiCore->getSetting('banner_bg_1');
-$bg2 = $isMobile ? $apiCore->getSetting('mobi_banner_bg_2') : $apiCore->getSetting('banner_bg_2');
-$bg3 = $isMobile ? $apiCore->getSetting('mobi_banner_bg_3') : $apiCore->getSetting('banner_bg_3');
-$bg4 = $isMobile ? $apiCore->getSetting('mobi_banner_bg_4') : $apiCore->getSetting('banner_bg_4');
+// $bg1 = $isMobile ? $apiCore->getSetting('mobi_banner_bg_1') : $apiCore->getSetting('banner_bg_1');
+// $bg2 = $isMobile ? $apiCore->getSetting('mobi_banner_bg_2') : $apiCore->getSetting('banner_bg_2');
+// $bg3 = $isMobile ? $apiCore->getSetting('mobi_banner_bg_3') : $apiCore->getSetting('banner_bg_3');
+// $bg4 = $isMobile ? $apiCore->getSetting('mobi_banner_bg_4') : $apiCore->getSetting('banner_bg_4');
 
-$title1 = $apiCore->getSetting('banner_title_1');
-$title2 = $apiCore->getSetting('banner_title_2');
-$title3 = $apiCore->getSetting('banner_title_3');
-$title4 = $apiCore->getSetting('banner_title_4');
+// $title1 = $apiCore->getSetting('banner_title_1');
+// $title2 = $apiCore->getSetting('banner_title_2');
+// $title3 = $apiCore->getSetting('banner_title_3');
+// $title4 = $apiCore->getSetting('banner_title_4');
 
-$link1 = $apiCore->getSetting('banner_link_1');
-$link2 = $apiCore->getSetting('banner_link_2');
-$link3 = $apiCore->getSetting('banner_link_3');
-$link4 = $apiCore->getSetting('banner_link_4');
+// $link1 = $apiCore->getSetting('banner_link_1');
+// $link2 = $apiCore->getSetting('banner_link_2');
+// $link3 = $apiCore->getSetting('banner_link_3');
+// $link4 = $apiCore->getSetting('banner_link_4');
 
 $displayBanner = $apiCore->getSetting("display_banner");
 
 ?>
 
-<style data-shopify>
+ 
+
+<!-- <style data-shopify>
     #shopify-section-1581505806578 {
         background-color: #efefef !important;
     }
@@ -45,7 +47,7 @@ $displayBanner = $apiCore->getSetting("display_banner");
         }
     }
 
-    #nt_1585640154849 .nt_img_txt>a:after {
+    #nt_1585640154849 .nt_img_txt > a:after {
         background-color: #000;
         opacity: 0.0
     }
@@ -142,7 +144,7 @@ $displayBanner = $apiCore->getSetting("display_banner");
         color: #ffffff
     }
 
-    #nt_1585640159361 .nt_img_txt>a:after {
+    #nt_1585640159361 .nt_img_txt > a:after {
         background-color: #000;
         opacity: 0.0
     }
@@ -239,7 +241,7 @@ $displayBanner = $apiCore->getSetting("display_banner");
         color: #ffffff
     }
 
-    #nt_1585640162346 .nt_img_txt>a:after {
+    #nt_1585640162346 .nt_img_txt > a:after {
         background-color: #000;
         opacity: 0.0
     }
@@ -356,121 +358,75 @@ $displayBanner = $apiCore->getSetting("display_banner");
 
     #b_1585640524232.btn_icon_true:after {
         color: #ffffff
-    }
+    } -->
+
+    
+<!-- </style> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<style>
+.carousel-inner {
+    height: auto;
+}
+
+.fa.fa-chevron-right, .fa.fa-chevron-left {
+  position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+}
+
+.banner-title {
+   position: absolute;
+    top: 50%;
+    font-size: 40px;
+    margin-left: 60px;
+}
 </style>
 
-@if($displayBanner == 1)
-<div id="shopify-section-1581505806578" class="shopify-section nt_section type_slideshow type_carousel">
-    <div class="SlideshowWrapper nt_se_1581505806578 nt_full se_height_cus_h nt_first">
-        <div class="fade_flick_1 slideshow row no-gutters equal_nt nt_slider js_carousel prev_next_0 btn_owl_1 dot_owl_2 dot_color_1 btn_vi_2" data-flickity='{ "fade":0,"cellAlign": "center","imagesLoaded": 0,"lazyLoad": 0,"freeScroll": 0,"wrapAround": true,"autoPlay" : 0,"pauseAutoPlayOnHover" : true, "rightToLeft": false, "prevNextButtons": false,"pageDots": true, "contain" : 1,"adaptiveHeight" : 1,"dragThreshold" : 5,"percentPosition": 1 }'>
-            <div id="nt_1585640154849" class="col-12 slideshow__slide">
-                <a href="{{$link1}}">
-                    <div class="oh pr nt_img_txt">
-                        <div class="js_full_ht4 img_slider_block dek_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg1}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
-                        </div>
-                        <div class="js_full_ht4 img_slider_block mb_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg1}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
-                        </div>
-                        <div class="caption-wrap caption-w-1 pe_none z_100 tl_md tl">
-                            <div class="pa_txts caption">
-                                <div class="left_right">
-                                    <div id="b_1585640508369" class="slt4_space"></div>
-                                    <h3 id="b_1585640512264" class="slt4_h3 lh__1 mg__0 max_width_500px">{{$title1}}</h3>
-                                    <div id="b_1585640518653" class="slt4_space"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" target="_blank" class="pa t__0 l__0 b__0 r__0 pe_none"></a>
-                    </div>
-                </a>
-            </div>
-            <div id="nt_1585640159361" class="col-12 slideshow__slide">
-                <a href="{{$link2}}">
-                    <div class="oh pr nt_img_txt">
-                        <div class="js_full_ht4 img_slider_block dek_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg2}}" data-ratio="3.0917874396135265" data-sizes="auto"></div>
-                        </div>
-                        <div class="js_full_ht4 img_slider_block mb_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg2}}" data-ratio="3.0917874396135265" data-sizes="auto"></div>
-                        </div>
-                        <div class="caption-wrap caption-w-1 pe_none z_100 tl_md tl">
-                            <div class="pa_txts caption">
-                                <div id="b_1585640490350" class="slt4_space"></div>
-                                <h3 id="b_1585640480446" class="slt4_h3 lh__1 mg__0 max_width_500px">{{$title2}}</h3>
-                                <div id="b_1585640492985" class="slt4_space"></div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div id="nt_1585640162346" class="col-12 slideshow__slide">
-                <a href="{{$link3}}">
-                    <div class="oh pr nt_img_txt">
-                        <div class="js_full_ht4 img_slider_block dek_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg3}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
-                        </div>
-                        <div class="js_full_ht4 img_slider_block mb_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg3}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
-                        </div>
-                        <div class="caption-wrap caption-w-1 pe_none z_100 tl_md tl">
-                            <div class="pa_txts caption">
-                                <div id="b_1585640490350" class="slt4_space"></div>
-                                <h3 id="b_1585640480446" class="slt4_h3 lh__1 mg__0 max_width_500px">{{$title3}}</h3>
-                                <div id="b_1585640492985" class="slt4_space"></div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div id="nt_1585640162346" class="col-12 slideshow__slide">
-                <a href="{{$link4}}">
-                    <div class="oh pr nt_img_txt">
-                        <div class="js_full_ht4 img_slider_block dek_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg4}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
-                        </div>
-                        <div class="js_full_ht4 img_slider_block mb_img_slide">
-                            <div class="nt_bg_lz lazyload item__position center center img_tran_ef pa l__0 t__0 r__0 b__0" data-bgset="{{url('public/') . $bg4}}" data-ratio="3.096774193548387" data-sizes="auto"></div>
-                        </div>
-                        <div class="caption-wrap caption-w-1 pe_none z_100 tl_md tl">
-                            <div class="pa_txts caption">
-                                <div id="b_1585640490350" class="slt4_space"></div>
-                                <h3 id="b_1585640480446" class="slt4_h3 lh__1 mg__0 max_width_500px">{{$title4}}</h3>
-                                <div id="b_1585640492985" class="slt4_space"></div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+@if($displayBanner == 1 && count($banners))
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+          @php $i = 0; @endphp
+          @foreach ($banners as $banner)
+          <li data-target="#myCarousel" data-slide-to="{{$i}}" class="<?php if($i == 0) {echo 'active'; $i++; }?>"></li>
+          @endforeach
+    </ol>
 
-@endif
+    <div class="carousel-inner">
+        @php $k = 0; @endphp
+        @foreach ($banners as $banner)
+          <a href="{{$banner->href}}" class="item <?php if($k == 0) {echo 'active'; $k++; }?>">
+            <img src="{{url('public/') . ($isMobile ? $banner->img_mobi : $banner->img )}}" alt="Los Angeles" style="width:100%; height: auto">
+            <!-- <div class="carousel-caption"> -->
+    <h3 class="banner-title">There are 3 red tomatoes</h3>
+  <!-- </div> -->
+</a>
+        @endforeach
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      <span class="sr-only">Next</span>
+    </a>
+
+  </div>
+
+
+
+    @endif
 <script type="text/javascript">
-    jQuery(document).ready(function() {
-        setInterval(function() {
+    jQuery(document).ready(function () {
+        setInterval(function () {
             changeBG();
         }, 5888);
     });
-
-    var curBG = 1;
-
-    function changeBG() {
-        var bind = jQuery('#shopify-section-1581505806578');
-        curBG++;
-
-        if (curBG > 4) {
-            curBG = 1;
-        }
-
-        var count = 0;
-        bind.find('.flickity-page-dots li').each(function(pos, ele) {
-            count++;
-
-            if (count === curBG) {
-                jQuery(ele)[0].click();
-            }
-        });
-    }
 </script>

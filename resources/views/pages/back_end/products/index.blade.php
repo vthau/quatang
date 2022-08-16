@@ -464,7 +464,7 @@ $viewer = $apiCore->getViewer();
 
     <a class="hidden" id="import_failed" download href="{{url('admin/product/import-failed')}}"></a>
 
-    <script type="text/javascript" src="{{url('public/js/back_end/products.js')}}"></script>
+    <script type="text/javascript" src="{{url('public/js/back_end/banners.js')}}"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function () {

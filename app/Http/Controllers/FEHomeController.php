@@ -29,6 +29,7 @@ use App\Model\LevelPermission;
 use App\Model\Log;
 use App\Model\MailQueue;
 use App\Model\News;
+use App\Model\Banner;
 use App\Model\Notification;
 use App\Model\NotificationType;
 use App\Model\Photo;
@@ -66,7 +67,8 @@ class FEHomeController extends Controller
     //landing
     public function trangChu()
     {
-        $values = [];
+        $banners = Banner::all();
+        $values = ["banners" => $banners];
 
         return view("pages.front_end.index", $values);
     }
