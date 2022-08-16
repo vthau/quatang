@@ -15,7 +15,7 @@ class Setting extends Item
     public $table = 'settings';
 
     protected $fillable = [
-        'title', 'value'
+        'title', 'value', 'title_view', 'display',
     ];
 
 }

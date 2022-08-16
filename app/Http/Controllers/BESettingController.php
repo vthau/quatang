@@ -26,7 +26,8 @@ class BESettingController extends Controller
             $this->_viewer = $this->_apiCore->getViewer();
 
             //
-            if ($this->_viewer &&
+            if (
+                $this->_viewer &&
                 ($this->_viewer->isDeleted() || $this->_viewer->isBlocked() || !$this->_viewer->isStaff())
             ) {
                 return redirect('/invalid');
@@ -72,10 +73,10 @@ class BESettingController extends Controller
         }
 
         $values = $request->post();
-//        echo '<pre>';var_dump($values, $request->file('site_logo'));die;
+        //        echo '<pre>';var_dump($values, $request->file('site_logo'));die;
         unset($values['_token']);
 
-        for ($i=1;$i<=4;$i++) {
+        for ($i = 1; $i <= 4; $i++) {
             if (!empty($request->file('banner_' . $i))) {
                 $imageName = 'home_banner_' . $i . '.' . $request->file('banner_' . $i)->getClientOriginalExtension();
                 $imagePath = "/uploaded/sys/" . $imageName;
@@ -97,7 +98,7 @@ class BESettingController extends Controller
             unset($values['mobi_banner_' . $i]);
         }
 
-        for ($i=1;$i<=3;$i++) {
+        for ($i = 1; $i <= 3; $i++) {
             if (!empty($request->file('cate_' . $i))) {
                 $imageName = 'home_cate_' . $i . '.' . $request->file('cate_' . $i)->getClientOriginalExtension();
                 $imagePath = "/uploaded/sys/" . $imageName;
@@ -166,7 +167,7 @@ class BESettingController extends Controller
         }
 
         $values = $request->post();
-//        echo '<pre>';var_dump($values, $request->file('site_logo'));die;
+        //        echo '<pre>';var_dump($values, $request->file('site_logo'));die;
         unset($values['_token']);
 
         //logo
@@ -215,7 +216,8 @@ class BESettingController extends Controller
             Session::forget('SAVED');
         }
         $params = $request->all();
-        if (!isset($params['s'])
+        if (
+            !isset($params['s'])
             && !in_array($params['s'], ['about_us', 'policy_client', 'policy_shipment', 'policy_refund', 'policy_payment', 'policy_security'])
         ) {
             return redirect('/invalid');
@@ -293,13 +295,13 @@ class BESettingController extends Controller
     public function settingUpdate(Request $request)
     {
         $values = $request->post();
-//        echo '<pre>';var_dump($values);die;
+        //        echo '<pre>';var_dump($values);die;
         unset($values['_token']);
-        if (!isset($values['title']) || !isset($values['body'])) {
+        if (!isset($values['title']) || !isset($values['title_view']) || !isset($values['body'])) {
             return redirect('/invalid');
         }
 
-        $this->_apiCore->updateSetting($values['title'], $values['body']);
+        $this->_apiCore->updateFullSetting($values['title'], $values['title_view'], $values['body'], $values['display']);
 
         $this->_apiCore->addLog([
             'user_id' => $this->_viewer->id,
@@ -315,6 +317,4 @@ class BESettingController extends Controller
 
         return redirect('/admin/setting?s=' . $values['title']);
     }
-
-
 }

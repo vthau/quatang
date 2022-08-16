@@ -66,9 +66,7 @@ class FEHomeController extends Controller
     //landing
     public function trangChu()
     {
-        $values = [
-
-        ];
+        $values = [];
 
         return view("pages.front_end.index", $values);
     }
@@ -106,7 +104,8 @@ class FEHomeController extends Controller
     {
         $values = $request->post();
 
-        if (isset($values['name']) && !empty($values['name'])
+        if (
+            isset($values['name']) && !empty($values['name'])
             && isset($values['phone']) && !empty($values['phone'])
             && isset($values['email']) && !empty($values['email'])
             && isset($values['body']) && !empty($values['body'])
@@ -133,8 +132,14 @@ class FEHomeController extends Controller
     //chinh-sach
     public function chinhSachThanhVien()
     {
+        $pageDisplay = $this->_apiCore->getTitleDisplay("policy_client");
+        if ($pageDisplay == 0) {
+            return redirect(403);
+        }
+
         $siteTitle = $this->_apiCore->getSetting('site_title');
-        $pageTitle = 'Chính Sách Thành Viên';
+        $pageTitle = $this->_apiCore->getPageTitleView("policy_client");
+
         $values = [
             'page_title' => (!empty($siteTitle)) ? $siteTitle . " | " . $pageTitle : $pageTitle,
         ];
@@ -143,8 +148,13 @@ class FEHomeController extends Controller
     }
     public function chinhSachGiaoHang()
     {
+        $pageDisplay = $this->_apiCore->getTitleDisplay("policy_shipment");
+        if ($pageDisplay == 0) {
+            return redirect(403);
+        }
+
         $siteTitle = $this->_apiCore->getSetting('site_title');
-        $pageTitle = 'Chính Sách Giao Hàng';
+        $pageTitle = $this->_apiCore->getPageTitleView("policy_shipment");
         $values = [
             'page_title' => (!empty($siteTitle)) ? $siteTitle . " | " . $pageTitle : $pageTitle,
         ];
@@ -153,18 +163,29 @@ class FEHomeController extends Controller
     }
     public function chinhSachDoiTra()
     {
+        $pageDisplay = $this->_apiCore->getTitleDisplay("policy_refund");
+        if ($pageDisplay == 0) {
+            return redirect(403);
+        }
+
         $siteTitle = $this->_apiCore->getSetting('site_title');
-        $pageTitle = 'Chính Sách Đổi Trả';
+        $pageTitle = $this->_apiCore->getPageTitleView("policy_refund");
         $values = [
             'page_title' => (!empty($siteTitle)) ? $siteTitle . " | " . $pageTitle : $pageTitle,
         ];
 
         return view("pages.front_end.info.policy_refund", $values);
     }
+
     public function chinhSachThanhToan()
     {
+        $pageDisplay = $this->_apiCore->getTitleDisplay("policy_payment");
+        if ($pageDisplay == 0) {
+            return redirect(403);
+        }
+
         $siteTitle = $this->_apiCore->getSetting('site_title');
-        $pageTitle = 'Chính Sách Thanh Toán';
+        $pageTitle = $this->_apiCore->getPageTitleView("policy_payment");
         $values = [
             'page_title' => (!empty($siteTitle)) ? $siteTitle . " | " . $pageTitle : $pageTitle,
         ];
@@ -173,8 +194,13 @@ class FEHomeController extends Controller
     }
     public function chinhSachBaoMat()
     {
+        $pageDisplay = $this->_apiCore->getTitleDisplay("policy_security");
+        if ($pageDisplay == 0) {
+            return redirect(403);
+        }
+
         $siteTitle = $this->_apiCore->getSetting('site_title');
-        $pageTitle = 'Chính Sách Bảo Mật';
+        $pageTitle = $this->_apiCore->getPageTitleView("policy_security");
         $values = [
             'page_title' => (!empty($siteTitle)) ? $siteTitle . " | " . $pageTitle : $pageTitle,
         ];
@@ -199,7 +225,8 @@ class FEHomeController extends Controller
     public function tinTucChiTiet($href, Request $request)
     {
         $item = News::where('href', $href)->first();
-        if (!$item
+        if (
+            !$item
             || ($item && $item->isDeleted())
         ) {
             return redirect('/');
@@ -236,7 +263,8 @@ class FEHomeController extends Controller
     public function tuVanChiTiet($href, Request $request)
     {
         $item = Event::where('href', $href)->first();
-        if (!$item
+        if (
+            !$item
             || ($item && $item->isDeleted())
         ) {
             return redirect('/');
@@ -270,7 +298,8 @@ class FEHomeController extends Controller
     public function thuongHieuChiTiet($href, Request $request)
     {
         $item = ProductBrand::where('href', $href)->first();
-        if (!$item
+        if (
+            !$item
             || ($item && $item->isDeleted())
         ) {
             return redirect('/');
@@ -312,7 +341,8 @@ class FEHomeController extends Controller
         $item = ProductCategory::where('href', $href)
             ->where('deleted', 0)
             ->first();
-        if (!$item
+        if (
+            !$item
             || ($item && $item->isDeleted())
         ) {
             return redirect('/');
@@ -337,7 +367,8 @@ class FEHomeController extends Controller
     {
         $params = $request->all();
         $item = Product::where('href', $href)->first();
-        if (!$item
+        if (
+            !$item
             || ($item && $item->isDeleted())
             || ($item && !$item->active)
         ) {
@@ -484,11 +515,11 @@ class FEHomeController extends Controller
 
             $select->where('title', 'LIKE', $search);
 
-//            $products = $this->_apiFE->getProducts([
-//                'keyword' => $keyword,
-//                'pagination' => 1,
-//                'page' => (isset($params['page']) && (int)$params['page']) ? (int)$params['page'] : 1,
-//            ]);
+            //            $products = $this->_apiFE->getProducts([
+            //                'keyword' => $keyword,
+            //                'pagination' => 1,
+            //                'page' => (isset($params['page']) && (int)$params['page']) ? (int)$params['page'] : 1,
+            //            ]);
 
             //
             $cart = UserCart::where('deleted', 0)
@@ -508,7 +539,7 @@ class FEHomeController extends Controller
                         ->leftJoin('users', 'user_carts.user_id', '=', 'users.id')
                         ->where('user_carts.deleted', 0)
                         ->whereIn('user_carts.status', ['chua_thanh_toan', 'da_thanh_toan'])
-                        ->where(function($q) use($search) {
+                        ->where(function ($q) use ($search) {
                             $q->where('users.phone', 'LIKE', $search)
                                 ->orWhere('user_carts.phone', 'LIKE', $search);
                         })
@@ -574,7 +605,4 @@ class FEHomeController extends Controller
 
         return view("pages.front_end.users.loved_products", $values);
     }
-
-
-
 }

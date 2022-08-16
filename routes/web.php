@@ -271,5 +271,9 @@ Route::get('/vnpay/callback', 'FECartController@vnpayCallback');
 Route::post('/dh/zalopay', 'FECartController@zalopayCreate');
 Route::get('/dh/zalopay/return', 'FECartController@zalopayReturn');
 
+Route::get('/403', function(){
+    return view("pages.front_end.403");
+});
+
 
 

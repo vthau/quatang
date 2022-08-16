@@ -23,10 +23,8 @@ $description = (isset($description)) ? $description : $apiCore->getSetting('site
 
 <link rel="canonical" href="{{url('')}}">
 
-<link rel="preload" as="style"
-      href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/pre_theme.minb2aa.css?v={{$jsVersion}}">
-<link rel="preload" as="style"
-      href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/theme.scss9c56.css?v={{$jsVersion}}">
+<link rel="preload" as="style" href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/pre_theme.minb2aa.css?v={{$jsVersion}}">
+<link rel="preload" as="style" href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/theme.scss9c56.css?v={{$jsVersion}}">
 
 <title>{{$pageTitle}}</title>
 
@@ -51,7 +49,7 @@ $description = (isset($description)) ? $description : $apiCore->getSetting('site
 <link rel="shortcut icon" type="image/png" href="{{asset('public')}}/favicon.ico">
 
 <!-- social-meta-tags.liquid -->
-<meta name="keywords" content="{{$keywords}}"/>
+<meta name="keywords" content="{{$keywords}}" />
 <meta name="author" content="GECKOSO">
 <meta property="og:site_name" content="{{$siteTitle}}">
 <meta property="og:url" content="{{url('')}}">
@@ -81,68 +79,29 @@ $description = (isset($description)) ? $description : $apiCore->getSetting('site
 
 <script src="{{url('public/libraries/zoom/magiczoomplus.js')}}" type="text/javascript"></script>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css" />
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.js"></script>
 
-<link rel="preload"
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&amp;display=swap"
-      as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link
-    href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/pre_theme.minb2aa.css?v={{$jsVersion}}"
-    rel="stylesheet" type="text/css" media="all"/>
-<link rel="preload" as="script"
-      href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/lazysizes.minc3ed.js?v={{$jsVersion}}">
-<link rel="preload" as="script"
-      href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_vendor.min455d.js?v={{$jsVersion}}">
-<link rel="preload"
-      href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/style.min9d6d.css?v={{$jsVersion}}"
-      as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link
-    href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/theme.scss9c56.css?v={{$jsVersion}}"
-    rel="stylesheet" type="text/css" media="all"/>
-<link id="sett_clt4" rel="preload"
-      href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/sett_cl1c1e.css?v={{$jsVersion}}"
-      as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload"
-      href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/line-awesome.min2fc9.css?v={{$jsVersion}}"
-      as="style" onload="this.onload=null;this.rel='stylesheet'">
-<script id="js_lzt4"
-        src="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/lazysizes.minc3ed.js?v={{$jsVersion}}"
-        async="async"></script>
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/pre_theme.minb2aa.css?v={{$jsVersion}}" rel="stylesheet" type="text/css" media="all" />
+<link rel="preload" as="script" href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/lazysizes.minc3ed.js?v={{$jsVersion}}">
+<link rel="preload" as="script" href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_vendor.min455d.js?v={{$jsVersion}}">
+<link rel="preload" href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/style.min9d6d.css?v={{$jsVersion}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/theme.scss9c56.css?v={{$jsVersion}}" rel="stylesheet" type="text/css" media="all" />
+<link id="sett_clt4" rel="preload" href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/sett_cl1c1e.css?v={{$jsVersion}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/line-awesome.min2fc9.css?v={{$jsVersion}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<script id="js_lzt4" src="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/lazysizes.minc3ed.js?v={{$jsVersion}}" async="async"></script>
 
 <script type="text/javascript">
     var t_name = '';
     var t_shop_currency = 'USD';
 </script>
 
-<script
-    src="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_vendor.min455d.js?v={{$jsVersion}}"
-    defer="defer" id="js_ntt4"
-    data-theme='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_theme.min.js?v={{$jsVersion}}'
-    data-stt='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_settings.js?v={{$jsVersion}}'
-    data-cat='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/cat.min.js?v={{$jsVersion}}'
-    data-sw='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/swatch.min.js?v={{$jsVersion}}'
-    data-prjs='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/produc.min.js?v={{$jsVersion}}'
-    data-mail='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/platform_mail.min.js?v={{$jsVersion}}'
-    data-my='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/my.js?v={{$jsVersion}}'
-    data-cusp='{{asset('public')}}/ttv/theme/s/javascripts/currencies.js?v={{$jsVersion}}'
-    data-cur='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_currencies.min.js?v={{$jsVersion}}'
-    data-mdl='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/module.min.js?v={{$jsVersion}}'
-    data-map='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/maplace.min.js?v={{$jsVersion}}'
-    data-time='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/spacetime.min.js?v={{$jsVersion}}'
-    data-ins='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_instagram.min.js?v={{$jsVersion}}'
-    data-user='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/interactable.min.js?v={{$jsVersion}}'
+<script src="{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_vendor.min455d.js?v={{$jsVersion}}" defer="defer" id="js_ntt4" data-theme='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_theme.min.js?v={{$jsVersion}}' data-stt='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_settings.js?v={{$jsVersion}}' data-cat='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/cat.min.js?v={{$jsVersion}}' data-sw='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/swatch.min.js?v={{$jsVersion}}' data-prjs='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/produc.min.js?v={{$jsVersion}}' data-mail='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/platform_mail.min.js?v={{$jsVersion}}' data-my='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/my.js?v={{$jsVersion}}' data-cusp='{{asset('public')}}/ttv/theme/s/javascripts/currencies.js?v={{$jsVersion}}' data-cur='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_currencies.min.js?v={{$jsVersion}}' data-mdl='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/module.min.js?v={{$jsVersion}}' data-map='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/maplace.min.js?v={{$jsVersion}}' data-time='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/spacetime.min.js?v={{$jsVersion}}' data-ins='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/nt_instagram.min.js?v={{$jsVersion}}' data-user='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/interactable.min.js?v={{$jsVersion}}' data-font='iconKalles , fakalles , Pe-icon-7-stroke , Font Awesome 5 Free:n9' data-fm='' data-spcmn='{{asset('public')}}/ttv/theme/s/assets/themes_support/shopify_common-8ea6ac3faf357236a97f5de749df4da6e8436ca107bc3a4ee805cbf08bc47392.js' data-cust='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/customerclnt.min.js?v={{$jsVersion}}' data-cusjs='none' data-desadm='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/des_adm.js?v={{$jsVersion}}' data-otherryv='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/reviewOther.js?v={{$jsVersion}}'></script>
 
-    data-font='iconKalles , fakalles , Pe-icon-7-stroke , Font Awesome 5 Free:n9'
-    data-fm=''
-    data-spcmn='{{asset('public')}}/ttv/theme/s/assets/themes_support/shopify_common-8ea6ac3faf357236a97f5de749df4da6e8436ca107bc3a4ee805cbf08bc47392.js'
-    data-cust='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/customerclnt.min.js?v={{$jsVersion}}'
-    data-cusjs='none'
-    data-desadm='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/des_adm.js?v={{$jsVersion}}'
-    data-otherryv='{{asset('public')}}/ttv/theme/s/files/1/0270/2098/4401/t/6/assets/reviewOther.js?v={{$jsVersion}}'
-></script>
-
-<script>var Shopify = Shopify || {};</script>
+<script>
+    var Shopify = Shopify || {};
+</script>
 
 {{--custom--}}
 <link rel="stylesheet" href="{{url('public/css/ttv/header.css?v=' . $jsVersion)}}">
@@ -151,16 +110,19 @@ $description = (isset($description)) ? $description : $apiCore->getSetting('site
 
 <script type="text/javascript">
     var gks = {
-        baseURL: '{{url('')}}',
+        baseURL: '{{url('
+        ')}}',
         loading: 'Đang xử lý...',
-        loadingUPLOADPHOTO: '{{url('public/images/loading_img.jpg')}}',
+        loadingUPLOADPHOTO: '{{url('
+        public / images / loading_img.jpg ')}}',
         successADD: 'Đã thêm thành công!',
         successEDIT: 'Đã sửa thành công!',
         successDEL: 'Đã xóa thành công!',
         successUPDATE: 'Đã cập nhật thành công!',
         successCHANGE: 'Đã cập nhật thành công!',
         saveERR: "Không thể kết nối. Vui lòng thử lại sau.",
-        loadingIMG: '<div class="js_loading"><img src="{{url('public/images/loading.gif')}}"></div>',
+        loadingIMG: '<div class="js_loading"><img src="{{url('
+        public / images / loading.gif ')}}"></div>',
         maxSize: '{{$maxSize}}',
         maxSizeText: '{{$maxSizeText}}',
         tempTK: '{{csrf_token()}}',
@@ -170,5 +132,3 @@ $description = (isset($description)) ? $description : $apiCore->getSetting('site
         timeOutFocus: 888,
     };
 </script>
-
-

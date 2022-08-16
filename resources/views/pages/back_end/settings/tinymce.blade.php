@@ -20,9 +20,34 @@ $viewer = $apiCore->getViewer();
                         <div class="card">
                             <div class="card-header"><strong>{{$pageTitle}}</strong></div>
                             <div class="card-body card-block">
-                                <div class="row">
+                            <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="required">Tên trang</label>
+                                            <input value="{{$apiCore->getPageTitleView($key)}}" name="title_view" type="text" autocomplete="off" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="required">Hiển thị</label>
+                                            <select class="form-control" name="display">
+                                                @php
+                                                    $display = $apiCore->getTitleDisplay($key);
+                                                @endphp
+
+                                                <option <?php if (isset($display) && $display == 1) : ?>selected="selected" <?php endif; ?> value="1">Bật</option>
+                                                <option <?php if (isset($display) && $display == 0) : ?>selected="selected" <?php endif; ?> value="0">Tắt</option>
+                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                         <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group" id="frm-textarea">
+                                            <label class="required">Nội dung</label>
                                             <textarea name="body" class="c-tinymce" rows="5">{{$apiCore->getSetting($key)}}</textarea>
                                         </div>
                                     </div>

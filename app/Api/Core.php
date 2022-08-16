@@ -605,6 +605,21 @@ class Core
         return "GECKOSO DEMO";
     }
 
+    public function getPageTitleView($setting)
+    {
+        $row = Setting::where('title', $setting)->first();
+        $value = ($row) ? $row->title_view : "";
+        return $value;
+    }
+
+    public function getTitleDisplay($setting)
+    {
+        $row = Setting::where('title', $setting)->first();
+        $value = ($row) ? $row->display : 0;
+
+        return $value;
+    }
+
     public function getSetting($setting, $params = [])
     {
         $row = Setting::where('title', $setting)->first();
@@ -755,6 +770,26 @@ class Core
         }
     }
 
+    public function updateFullSetting($key, $titleView, $value, $display)
+    {
+        $row = Setting::where('title', $key)->first();
+
+        echo $titleView;
+        if ($row) {
+            $row->update([
+                'title_view' => $titleView,
+                'value' => $value,
+                'display' => $display,
+            ]);
+        } else {
+            Setting::create([
+                'title' => $key,
+                'title_view' => $titleView,
+                'value' => $value
+            ]);
+        }
+    }
+
     public function addLog($values)
     {
         if (count($values)) {
@@ -828,7 +863,6 @@ class Core
             case 'user_supplier':
                 $item = UserSupplier::find((int)$itemId);
                 break;
-
         }
         return $item;
     }
@@ -940,7 +974,7 @@ class Core
         $select = User::where('level_id', 4)
             ->where('deleted', 0)
             ->where('hop_tac', 1)
-            ->where(function($q) {
+            ->where(function ($q) {
                 $q->where('chung_chi_truc_tiep', '>', 0)
                     ->orWhere('chung_chi_gian_tiep', '>', 0);
             })
@@ -1025,7 +1059,6 @@ class Core
                 $user->createCommission((int)date('m'), (int)date('Y'));
             }
         }
-
     }
 
     public function numberCurrency($number)
@@ -1078,7 +1111,6 @@ class Core
             if (!$row) {
                 break;
             }
-
         } while (1);
 
         $values['code'] = $code;
@@ -1119,8 +1151,7 @@ class Core
             ->where('id', '>', 2)
             //ko tinh super admin
             //van tinh delete user
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1188,8 +1219,7 @@ class Core
             ->where('users.id', '>', 2)
             //ko tinh super admin
             //van tinh delete user
-            ->whereYear('user_carts.created_at', (int)$year)
-        ;
+            ->whereYear('user_carts.created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1242,8 +1272,7 @@ class Core
             ->where('users.id', '>', 2)
             //ko tinh super admin
             //van tinh delete user
-            ->whereYear('user_carts.created_at', (int)$year)
-        ;
+            ->whereYear('user_carts.created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1290,8 +1319,7 @@ class Core
         $select = UserCart::selectRaw('COUNT(id) as total')
             ->whereIn('status', ['da_thanh_toan', 'chua_thanh_toan'])
             //van tinh delete cart
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1312,8 +1340,7 @@ class Core
     {
         $select = UserCart::selectRaw('COUNT(id) as total')
             ->where('status', 'da_thanh_toan')
-            ->where('deleted', 0)
-        ;
+            ->where('deleted', 0);
 
         if ($year == 2020 && $month == 11) {
             //tu thang 11 ve truoc
@@ -1334,8 +1361,7 @@ class Core
         $select = UserCart::selectRaw('COUNT(id) as total')
             ->where('status', 'da_thanh_toan')
             ->where('deleted', 0)
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1356,8 +1382,7 @@ class Core
     {
         $select = UserCart::selectRaw('COUNT(id) as total')
             ->whereIn('status', ['da_thanh_toan', 'chua_thanh_toan'])
-            ->where('deleted', 1)
-        ;
+            ->where('deleted', 1);
 
         if ($year == 2020 && $month == 11) {
             //tu thang 11 ve truoc
@@ -1378,8 +1403,7 @@ class Core
         $select = UserCart::selectRaw('COUNT(id) as total')
             ->whereIn('status', ['da_thanh_toan', 'chua_thanh_toan'])
             ->where('deleted', 1)
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1424,8 +1448,7 @@ class Core
             ->distinct()
             ->whereIn('status', ['da_thanh_toan', 'chua_thanh_toan'])
             //van tinh delete cart
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1447,8 +1470,7 @@ class Core
         $select = UserCart::selectRaw('SUM(total_cart - total_discount) as total')
             ->distinct()
             ->where('status', 'da_thanh_toan')
-            ->where('deleted', 0)
-        ;
+            ->where('deleted', 0);
 
         if ($year == 2020 && $month == 11) {
             //tu thang 11 ve truoc
@@ -1470,8 +1492,7 @@ class Core
             ->distinct()
             ->where('status', 'da_thanh_toan')
             ->where('deleted', 0)
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1493,8 +1514,7 @@ class Core
         $select = UserCart::selectRaw('SUM(total_cart - total_discount) as total')
             ->distinct()
             ->whereIn('status', ['da_thanh_toan', 'chua_thanh_toan'])
-            ->where('deleted', 1)
-        ;
+            ->where('deleted', 1);
 
         if ($year == 2020 && $month == 11) {
             //tu thang 11 ve truoc
@@ -1516,8 +1536,7 @@ class Core
             ->distinct()
             ->whereIn('status', ['da_thanh_toan', 'chua_thanh_toan'])
             ->where('deleted', 1)
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1538,8 +1557,7 @@ class Core
     {
         $select = UserCart::selectRaw('SUM(refer_money) as total')
             ->where('status', 'da_thanh_toan')
-            ->where('deleted', 0)
-        ;
+            ->where('deleted', 0);
 
         if ($year == 2020 && $month == 11) {
             //tu thang 11 ve truoc
@@ -1560,8 +1578,7 @@ class Core
         $select = UserCart::selectRaw('SUM(refer_money) as total')
             ->where('status', 'da_thanh_toan')
             ->where('deleted', 0)
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1582,8 +1599,7 @@ class Core
     {
         $select = UserCart::selectRaw('SUM(parent_refer_money) as total')
             ->where('status', 'da_thanh_toan')
-            ->where('deleted', 0)
-        ;
+            ->where('deleted', 0);
 
         if ($year == 2020 && $month == 11) {
             //tu thang 11 ve truoc
@@ -1604,8 +1620,7 @@ class Core
         $select = UserCart::selectRaw('SUM(parent_refer_money) as total')
             ->where('status', 'da_thanh_toan')
             ->where('deleted', 0)
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1635,9 +1650,9 @@ class Core
 
         $total = 0;
         if (count($commissions)) {
-             foreach ($commissions as $commission) {
-                 $total += $commission->tds_thuc_te;
-             }
+            foreach ($commissions as $commission) {
+                $total += $commission->tds_thuc_te;
+            }
         }
 
         return $total;
@@ -1703,8 +1718,7 @@ class Core
                     ->orWhereIn('parent_refer_id', $ids);
             })
             ->whereMonth('created_at', (int)$month)
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1712,11 +1726,11 @@ class Core
 
     public function bcTongDHGroupLuyKe($month, $year, $ids)
     {
-//        if ((int)$month == 1) {
-//            $date = date(($year - 1) . '-12-t');
-//        } else {
-//            $date = date($year . '-' . ($month - 1) . '-t');
-//        }
+        //        if ((int)$month == 1) {
+        //            $date = date(($year - 1) . '-12-t');
+        //        } else {
+        //            $date = date($year . '-' . ($month - 1) . '-t');
+        //        }
 
         $select = UserCart::selectRaw('COUNT(id) as total')
             ->distinct()
@@ -1727,10 +1741,9 @@ class Core
                     ->orWhereIn('refer_id', $ids)
                     ->orWhereIn('parent_refer_id', $ids);
             })
-//            ->where('created_at', '<=', $date)
+            //            ->where('created_at', '<=', $date)
             ->whereMonth('created_at', '<', (int)$month)
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1748,8 +1761,7 @@ class Core
                     ->orWhereIn('parent_refer_id', $ids);
             })
             ->whereMonth('created_at', (int)$month)
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1757,11 +1769,11 @@ class Core
 
     public function bcTongDSNETGroupLuyKe($month, $year, $ids)
     {
-//        if ((int)$month == 1) {
-//            $date = date(($year - 1) . '-12-t');
-//        } else {
-//            $date = date($year . '-' . ($month - 1) . '-t');
-//        }
+        //        if ((int)$month == 1) {
+        //            $date = date(($year - 1) . '-12-t');
+        //        } else {
+        //            $date = date($year . '-' . ($month - 1) . '-t');
+        //        }
 
         $select = UserCart::selectRaw('SUM(total_cart - total_discount) as total')
             ->distinct()
@@ -1772,10 +1784,9 @@ class Core
                     ->orWhereIn('refer_id', $ids)
                     ->orWhereIn('parent_refer_id', $ids);
             })
-//            ->where('created_at', '<=', $date)
+            //            ->where('created_at', '<=', $date)
             ->whereMonth('created_at', '<', (int)$month)
-            ->whereYear('created_at', (int)$year)
-        ;
+            ->whereYear('created_at', (int)$year);
 
         $count = $select->get();
         return (int)$count[0]['total'];
@@ -1783,7 +1794,9 @@ class Core
 
     public function bcTDSMuc1($month, $year)
     {
-        $muc1 = 0; $muc2 = 0; $muc3 = 0;
+        $muc1 = 0;
+        $muc2 = 0;
+        $muc3 = 0;
 
         $keyword = 'TDS_' . (int)$month . '_' . (int)$year;
         $setting = Setting::where('title', $keyword)
@@ -1809,7 +1822,9 @@ class Core
 
     public function bcTDSMuc1LuyKe($month, $year)
     {
-        $muc1 = 0; $muc2 = 0; $muc3 = 0;
+        $muc1 = 0;
+        $muc2 = 0;
+        $muc3 = 0;
 
         $keyword = 'TDS_' . (int)$month . '_' . (int)$year;
         $setting = Setting::where('title', $keyword)
@@ -1842,7 +1857,9 @@ class Core
                 continue;
             }
 
-            $muc1 = 0; $muc2 = 0; $muc3 = 0;
+            $muc1 = 0;
+            $muc2 = 0;
+            $muc3 = 0;
 
             $keyword = 'TDS_' . (int)$i . '_' . (int)$year;
             $setting = Setting::where('title', $keyword)
@@ -1879,7 +1896,9 @@ class Core
 
     public function bcTDSMuc2($month, $year)
     {
-        $muc1 = 0; $muc2 = 0; $muc3 = 0;
+        $muc1 = 0;
+        $muc2 = 0;
+        $muc3 = 0;
 
         $keyword = 'TDS_' . (int)$month . '_' . (int)$year;
         $setting = Setting::where('title', $keyword)
@@ -1905,7 +1924,9 @@ class Core
 
     public function bcTDSMuc2LuyKe($month, $year)
     {
-        $muc1 = 0; $muc2 = 0; $muc3 = 0;
+        $muc1 = 0;
+        $muc2 = 0;
+        $muc3 = 0;
 
         $keyword = 'TDS_' . (int)$month . '_' . (int)$year;
         $setting = Setting::where('title', $keyword)
@@ -1938,7 +1959,9 @@ class Core
                 continue;
             }
 
-            $muc1 = 0; $muc2 = 0; $muc3 = 0;
+            $muc1 = 0;
+            $muc2 = 0;
+            $muc3 = 0;
 
             $keyword = 'TDS_' . (int)$i . '_' . (int)$year;
             $setting = Setting::where('title', $keyword)
@@ -1975,7 +1998,9 @@ class Core
 
     public function bcTDSMuc3($month, $year)
     {
-        $muc1 = 0; $muc2 = 0; $muc3 = 0;
+        $muc1 = 0;
+        $muc2 = 0;
+        $muc3 = 0;
 
         $keyword = 'TDS_' . (int)$month . '_' . (int)$year;
         $setting = Setting::where('title', $keyword)
@@ -2000,7 +2025,9 @@ class Core
 
     public function bcTDSMuc3LuyKe($month, $year)
     {
-        $muc1 = 0; $muc2 = 0; $muc3 = 0;
+        $muc1 = 0;
+        $muc2 = 0;
+        $muc3 = 0;
 
         $keyword = 'TDS_' . (int)$month . '_' . (int)$year;
         $setting = Setting::where('title', $keyword)
@@ -2032,7 +2059,9 @@ class Core
                 continue;
             }
 
-            $muc1 = 0; $muc2 = 0; $muc3 = 0;
+            $muc1 = 0;
+            $muc2 = 0;
+            $muc3 = 0;
 
             $keyword = 'TDS_' . (int)$i . '_' . (int)$year;
             $setting = Setting::where('title', $keyword)

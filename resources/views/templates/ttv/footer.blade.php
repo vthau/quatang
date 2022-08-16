@@ -153,21 +153,45 @@ $cates = $apiFE->getProductCategories(6);
                                     <li class="menu-item text-capitalize">
                                         <a href="{{url('lien-he')}}">liên hệ</a>
                                     </li>
+
+                                    @php
+                                        $displayClient = $apiCore->getTitleDisplay("policy_client");
+                                        $displayShipment = $apiCore->getTitleDisplay("policy_shipment");
+                                        $displayRefund = $apiCore->getTitleDisplay("policy_refund");
+                                        $displayPayment = $apiCore->getTitleDisplay("policy_payment");
+                                        $displaySecurity = $apiCore->getTitleDisplay("policy_security");
+
+                                    @endphp
+
+                                    @if ($displayClient == 1)
                                     <li class="menu-item text-capitalize">
-                                        <a href="{{url('chinh-sach-thanh-vien')}}">chính sách thành viên</a>
+                                        <a href="{{url('chinh-sach-bao-mat')}}">{{$apiCore->getPageTitleView("policy_client")}}</a>
                                     </li>
+                                    @endif
+
+                                    @if ($displaySecurity == 1)
                                     <li class="menu-item text-capitalize">
-                                        <a href="{{url('chinh-sach-bao-mat')}}">chính sách bảo mật</a>
+                                        <a href="{{url('chinh-sach-thanh-vien')}}">{{$apiCore->getPageTitleView("policy_security")}}</a>
                                     </li>
+                                    @endif
+
+                                    @if ($displayPayment == 1)
                                     <li class="menu-item text-capitalize">
-                                        <a href="{{url('chinh-sach-thanh-toan')}}">chính sách thanh toán</a>
+                                        <a href="{{url('chinh-sach-thanh-toan')}}">{{$apiCore->getPageTitleView("policy_payment")}}</a>
                                     </li>
+                                    @endif
+
+                                    @if ($displayShipment == 1)
                                     <li class="menu-item text-capitalize">
-                                        <a href="{{url('chinh-sach-giao-hang')}}">chính sách giao hàng</a>
+                                        <a href="{{url('chinh-sach-giao-hang')}}">{{$apiCore->getPageTitleView("policy_shipment")}}</a>
                                     </li>
+                                    @endif
+
+                                    @if ($displayRefund == 1)
                                     <li class="menu-item text-capitalize">
-                                        <a href="{{url('chinh-sach-doi-tra')}}">chính sách đổi trả</a>
+                                        <a href="{{url('chinh-sach-doi-tra')}}">{{$apiCore->getPageTitleView("policy_refund")}}</a>
                                     </li>
+                                    @endif
                                 </ul>
                             </div>
                         </aside>
