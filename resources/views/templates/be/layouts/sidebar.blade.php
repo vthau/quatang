@@ -185,6 +185,17 @@ $viewer = $apiCore->getViewer();
             </a>
         </li>
 
+        <li class="c-sidebar-nav-title parent_title">
+            <i class="fa fa-users"></i>
+            Element
+        </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/elements')}}">
+                <i class="fa fa-list"></i>
+                Danh Sách
+            </a>
+        </li>
+
         @if ($viewer->isAllowed("setting_home")
         || $viewer->isAllowed("setting_config")
         || $viewer->isAllowed("setting_about")

@@ -46,6 +46,7 @@ use App\Model\TestAnswer;
 use App\Model\TestDetail;
 use App\Model\TestQuestion;
 use App\Model\UserCart;
+use App\Model\Element;
 use App\Model\UserCartOnline;
 use App\Model\UserCartProduct;
 use App\Model\UserLevel;
@@ -68,7 +69,8 @@ class FEHomeController extends Controller
     public function trangChu()
     {
         $banners = Banner::all();
-        $values = ["banners" => $banners];
+        $elements = Element::oldest('order')->get();
+        $values = ["banners" => $banners, "elements" => $elements];
 
         return view("pages.front_end.index", $values);
     }

@@ -100,8 +100,11 @@ Route::get('/admin/banners', 'BEBannerController@index');
 Route::get('/admin/banner/add', 'BEBannerController@add');
 Route::post('/admin/banner/save', 'BEBannerController@save');
 Route::post('/admin/banner/delete', 'BEBannerController@delete');
-// Route::post('/admin/product/update-status', 'BEProductController@updateStatus');
 
+//element
+Route::get('/admin/elements', 'BEElementController@index');
+Route::post('/admin/element/sort', 'BEElementController@sort');
+Route::post('/admin/element/update', 'BEElementController@update');
 
 //contacts
 Route::get('/admin/contacts', 'BEContactController@index');
