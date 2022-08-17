@@ -28,6 +28,7 @@ use App\Model\GhnDistrict;
 use App\Model\GhnProvince;
 use App\Model\GhnWard;
 use App\Model\Setting;
+use App\Model\UserCategory;
 use App\Model\UserCommission;
 
 class User extends Authenticatable
@@ -41,7 +42,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password', 'phone',
-        'address', 'ward_id', 'district_id', 'province_id',
+        'address', 'ward_id', 'district_id', 'province_id', 'user_category_id',
         'href', 'level_id', 'supplier_id',
         'time_notification', 'note', 'deleted',
 
@@ -201,6 +202,12 @@ class User extends Authenticatable
         }
 
         return $text;
+    }
+
+    public function getNameCategory()
+    {
+        $category = UserCategory::find($this->user_category_id);
+        return $category->title;
     }
 
     public function getFullAddress()
@@ -413,5 +420,16 @@ class User extends Authenticatable
     public function isDeleted()
     {
         return $this->deleted;
+    }
+
+    public function getCategoryOthers()
+    {
+        $select = UserCategory::query('user_categories')
+            ->select('user_categories.*')
+            ->leftJoin('user_categories_other', 'user_categories_other.category_id', '=', 'user_categories.id')
+            ->where('user_categories_other.user_id', $this->id)
+            ->orderBy('user_categories_other.id', 'asc');
+
+        return $select->get();
     }
 }

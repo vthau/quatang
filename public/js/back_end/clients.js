@@ -5,8 +5,6 @@ jQuery(document).ready(function () {
     });
 });
 
-console.log("Da run");
-
 function changePassword(id) {
     var popup = jQuery("#modal_change_password");
     popup.find("input[name=item_id]").val(id);

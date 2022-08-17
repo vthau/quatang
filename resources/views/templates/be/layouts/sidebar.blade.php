@@ -165,6 +165,14 @@ $viewer = $apiCore->getViewer();
             Khách Hàng
         </li>
         @endif
+
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{url('admin/user-categories')}}">
+                <i class="fa fa-box"></i>
+                Nhóm Khách Hàng
+            </a>
+        </li>
+
         @if ($viewer->isAllowed("client_view"))
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{url('admin/clients')}}">

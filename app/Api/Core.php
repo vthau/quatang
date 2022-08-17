@@ -24,6 +24,7 @@ use App\Model\News;
 use App\Model\Event;
 use App\Model\UserCart;
 use App\Model\Notification;
+use App\Model\UserCategory;
 
 class Core
 {
@@ -174,6 +175,35 @@ class Core
                 } while (1);
 
                 break;
+
+            case 'user_category':
+                    $item = UserCategory::find((int)$values['id']);
+                    if ($item && $item->id) {
+                        $id = $item->id;
+                    }
+
+                    do {
+                        $temp = $href;
+                        if ($count) {
+                            $temp = $temp . "-" . $count;
+                        }
+
+                        $select = UserCategory::where('deleted', 0)
+                            ->where("href", $temp);
+                        if ($id) {
+                            $select->where("id", "<>", $id);
+                        }
+                        $row = $select->first();
+
+                        if (!$row) {
+                            $href = $temp;
+                            break;
+                        }
+
+                        $count++;
+                    } while (1);
+
+                    break;
 
             case 'product_brand':
                 $item = ProductBrand::find((int)$values['id']);

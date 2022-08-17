@@ -19,6 +19,8 @@ use App\Model\Log;
 use App\Model\UserLevel;
 use App\Model\File;
 use App\Model\UserBlock;
+use App\Model\UserCategory;
+use App\Model\UserCategoryOther;
 
 class BEClientController extends Controller
 {
@@ -154,6 +156,96 @@ class BEClientController extends Controller
         ];
 
         return view("pages.back_end.clients.add", $values);
+    }
+
+    public function edit(Request $request)
+    {
+        $params = $request->all();
+        $pageTitle = 'Sửa Nhóm Khách Hàng';
+        $itemId = (isset($params['id'])) ? (int)$params['id'] : 0;
+
+        $user = User::find($itemId);
+        if (!$user) {
+            return redirect('/clients');
+        }
+
+        $values = [
+            'page_title' => $pageTitle,
+            'item' => $user,
+        ];
+
+        //categories
+        $values['categories'] = UserCategory::where('deleted', 0)
+            ->where("parent_id", 0)
+            ->orderBy('id', 'asc')
+            ->get();
+
+
+        //cate others
+        $categoriesIds = [];
+        if ($user && count($user->getCategoryOthers())) {
+            foreach ($user->getCategoryOthers() as $cate) {
+                $categoriesIds[] = $cate->id;
+            }
+        }
+        $values['categoriesIds'] = $categoriesIds;
+
+        return view("pages.back_end.clients.edit", $values);
+    }
+
+    public function update(Request $request)
+    {
+        if (!count($request->post())) {
+            return redirect('/admin/clients');
+        }
+
+        $values = $request->post();
+        //        echo '<pre>';var_dump($values);die;
+        $itemId = (isset($values['item_id'])) ? (int)$values['item_id'] : 0;
+        $user = User::find($itemId);
+
+        unset($values['_token']);
+
+        $cateOthers = (isset($values['cate_others'])) ? $values['cate_others'] : [];
+
+        unset($values['cate_others']);
+        unset($values['item_id']);
+
+        $updated = $values;
+
+        if ($user) {
+            //cate others
+            UserCategoryOther::where('user_id', $user->id)
+                ->delete();
+            if (count($cateOthers)) {
+                foreach ($cateOthers as $i) {
+                    UserCategoryOther::create([
+                        'user_id' => $user->id,
+                        'category_id' => (int)$i,
+                    ]);
+                }
+            }
+
+            $user->update($updated);
+
+            $user = User::find($user->id);
+            Session::put('MESSAGE', 'ITEM_EDITED');
+        } else {
+            $user = User::create($updated);
+
+            if (count($cateOthers)) {
+                foreach ($cateOthers as $i) {
+                    UserCategoryOther::create([
+                        'user_id' => $user->id,
+                        'category_id' => (int)$i,
+                    ]);
+                }
+            }
+
+            Session::put('MESSAGE', 'ITEM_ADDED');
+        }
+
+        return redirect('/admin/clients');
     }
 
     public function save(Request $request)

@@ -123,6 +123,7 @@ $viewer = $apiCore->getViewer();
                                     <th>khách hàng</th>
                                     <th>điện thoại</th>
                                     <th>email</th>
+                                    <th>Nhóm</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -139,10 +140,23 @@ $viewer = $apiCore->getViewer();
                                         <td>
                                             <a class="text-lowercase" href="mailto:{{$user->email}}">{{$user->email}}</a>
                                         </td>
+
+                                        <td>
+                                            <div class="mb-1">
+                                                <span class="badge badge-success text-uppercase">
+                                                {{$user->getNameCategory()}}
+                                                </span>
+                                            </div>
+                                        </td>
+
                                         <td>
                                             <div class="align-right">
                                                 <button class="btn btn-primary btn-sm mb-1" title="Xem" data-original-title="Xem" onclick="gotoPage('{{$user->getHref()}}')">
                                                     <i class="fa fa-eye"></i>
+                                                </button>
+
+                                                <button class="btn btn-info btn-sm mb-1" title="Sửa" data-original-title="Sửa"  onclick="openPage('{{url('admin/client/edit?id=' . $user->id)}}')">
+                                                    <i class="fa fa-edit"></i>
                                                 </button>
 
                                                 @if ($viewer->isAllowed("client_reset_password"))
@@ -200,6 +214,32 @@ $viewer = $apiCore->getViewer();
                     <input type="hidden" name="item_id" />
                 </div>
 
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="modal_item_update" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+            </div>
+            <form action="{{url('admin/user-categorie/save')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <div class="form-group" id="req-title">
+                        <input required name="title" type="text" autocomplete="off" class="form-control" />
+                        <div class="alert alert-danger hidden"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Không</button>
+                    <button type="submit" class="btn btn-primary">Xác Nhận</button>
+
+                    <input type="hidden" name="item_id" />
+                    <input type="hidden" name="parent_id" />
+                </div>
             </form>
         </div>
     </div>

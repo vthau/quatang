@@ -39,6 +39,8 @@ Route::post('/admin/staff/block', 'BEStaffController@block');
 Route::get('/admin/clients', 'BEClientController@index');
 Route::get('/admin/clients/export', 'BEClientController@exportItem');
 Route::get('/admin/client/add', 'BEClientController@add');
+Route::get('/admin/client/edit', 'BEClientController@edit');
+Route::post('/admin/client/update', 'BEClientController@update');
 Route::post('/admin/client/save', 'BEClientController@save');
 Route::post('/admin/client/delete', 'BEClientController@delete');
 Route::post('/admin/client/change-password', 'BEClientController@changePassword');
@@ -46,6 +48,10 @@ Route::post('/admin/client/change-password', 'BEClientController@changePassword'
 Route::get('/admin/product-categories', 'BECategoryController@index');
 Route::post('/admin/category/save', 'BECategoryController@save');
 Route::post('/admin/category/delete', 'BECategoryController@delete');
+//user categories
+Route::get('/admin/user-categories', 'BEUserCategoryController@index');
+Route::post('/admin/user-categorie/save', 'BEUserCategoryController@save');
+Route::post('/admin/user-categorie/delete', 'BEUserCategoryController@delete');
 //brands
 Route::get('/admin/product-brands', 'BEBrandController@index');
 Route::post('/admin/brand/save', 'BEBrandController@save');
