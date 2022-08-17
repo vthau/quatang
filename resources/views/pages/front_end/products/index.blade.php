@@ -2,6 +2,9 @@
 $apiCore = new \App\Api\Core;
 $viewer = $apiCore->getViewer();
 
+$productLimit = $apiCore->getSetting("product_limit");
+$productLine = $apiCore->getSetting("product_line");
+
 $apiMobile = new \App\Api\Mobile;
 $isMobile = $apiMobile->isMobile();
 
@@ -9,9 +12,11 @@ $apiFE = new \App\Api\FE;
 $products = $apiFE->getProducts([
     'pagination' => 1,
     'page' => (isset($params['page']) && (int)$params['page']) ? (int)$params['page'] : 1,
-//    'limit' => 1,
+    'limit' => $productLimit,
 ]);
 ?>
+
+
 
 @extends('templates.front_end.master')
 
@@ -50,6 +55,9 @@ $products = $apiFE->getProducts([
         </div>
     </div>
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script type="text/javascript" src="{{url('public/js/jquery.endless-scroll.js')}}"></script> -->
+    <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function () {
             @if (isset($active) && (int)$active)

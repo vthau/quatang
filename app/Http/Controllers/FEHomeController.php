@@ -340,6 +340,22 @@ class FEHomeController extends Controller
 
         return view("pages.front_end.products.index", $values);
     }
+
+    public function loadMoreProduct(Request $request)
+    {
+        $params = $request->all();
+        $productLimit = $this->_apiCore->getSetting('product_limit');
+        $productLine = $this->_apiCore->getSetting('product_line');
+        $products = $this->_apiFE->getProducts([
+            'pagination' => 1,
+            'page' => (isset($params['page']) && (int)$params['page']) ? (int)$params['page'] : 1,
+            'limit' => $productLimit,
+        ]);
+
+        // return "fdfd";
+        return Product::toHMLTProducts($productLimit,  $productLine, $products);
+    }
+
     public function danhMuc($href, Request $request)
     {
         $item = ProductCategory::where('href', $href)

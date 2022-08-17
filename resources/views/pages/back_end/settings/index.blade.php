@@ -137,6 +137,35 @@ $viewer = $apiCore->getViewer();
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="col-sm-12" id="req-product_limit">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Sản phẩm một lần load</label>
+                                        <input value="{{$apiCore->getSetting('product_limit')}}" name="product_limit" type="text" autocomplete="off" class="form-control" />
+                                    </div>
+                                    <div class="form-group alert alert-danger hidden">Số lượng sản phẩm load phải từ 8 trở lên</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12" id="req-product_line">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Sản phẩm trên một hàng</label>
+                                        <input value="{{$apiCore->getSetting('product_line')}}" name="product_line" type="text" autocomplete="off" class="form-control" />
+                                    </div>
+                                    <div class="form-group alert alert-danger hidden">Số lượng sản phẩm trên một hàng phải từ 2 trở lên</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Tổng đài tư vấn</label>
+                                        <input value="{{$apiCore->getSetting('site_tuvan')}}" name="site_tuvan" type="text" autocomplete="off" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
 
                             <div class="row" id="req-logo">
                                 <div class="col-md-12">
@@ -202,6 +231,8 @@ $viewer = $apiCore->getViewer();
         </form>
     </div>
 </div>
+
+<script type="text/javascript" src="{{url('public/js/back_end/setting.js')}}"></script>
 
 <script type="text/javascript">
     jQuery(document).ready(function() {

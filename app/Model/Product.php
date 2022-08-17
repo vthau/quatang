@@ -63,6 +63,135 @@ class Product extends Item
         return '<a target="_blank" class="c-href-item ' . $class . '" title="' . $this->getTitle() . '" href="' . $href . '">' . $htmlAvatar . $htmlTitle . '</a>';
     }
 
+    public static function toHMLTProducts($productLimit, $productLine, $products)
+    {
+        if (!count($products)) return "";
+
+        $loop = floor($productLimit / $productLine);
+        if ($productLimit % $productLine != 0) {
+            $loop += 1;
+        }
+        $html = "";
+        $currentProduct = 0;
+
+        for ($currentLoop = 0; $currentLoop < $loop; $currentLoop++) {
+            $html .= ' <div class="products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default">';
+
+
+            for ($j = 0; $j < $productLine; $j++) {
+                if ($currentProduct == $productLimit) break;
+                $product = $products[$currentProduct];
+                $currentProduct++;
+                $productAvatar = $product->getAvatar();
+                $productHref = $product->getHref(true);
+
+                $html .= '<div class="col-lg-3 col-md-3 col-12 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
+                <div class="product-inner pr">
+                    <div class="product-image pr oh lazyloaded product-custom" >
+                        <span class="tc nt_labels pa pe_none cw"></span>';
+
+                $html .= '<a class="db" href="' . $productHref . '">';
+                $html .= '<div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyloaded"
+                data-id="14246008717451"
+                data-bgset="' . $productAvatar . '"
+                data-parent-fit="width" data-wiis="" data-ratio="0.7837837837837838"
+                style="padding-top: 127.586%; background-image: url(' .   $productAvatar   . ');">
+                <picture style="display: none;">
+                    <source
+                        data-srcset="' . $productAvatar . '"
+                        sizes="270px"
+                        srcset="' . $productAvatar . '">
+                    <img alt="" class="lazyautosizes lazyloaded" data-sizes="auto"
+                        data-ratio="0.7837837837837838" sizes="270px"></picture>
+                </div>  </a>';
+                $html .= '<div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
+                <div class="pr_lazy_img back-img pa nt_bg_lz lazyloaded"
+                    data-id="14246008750219"
+                    data-bgset="' . $productAvatar . '"
+                    data-parent-fit="width" data-wiis="" data-ratio="0.7837837837837838"
+                    style="padding-top: 127.586%; background-image: url(' .   $productAvatar   . ');">
+                    <picture style="display: none;">
+                        <source
+                            data-srcset="' . $productAvatar . '"
+                            sizes="270px"
+                            srcset="' . $productAvatar . '">
+                        <img alt="" class="lazyautosizes lazyloaded" data-sizes="auto"
+                            data-ratio="0.7837837837837838" sizes="270px"></picture>
+                        </div>
+                    </div>';
+
+                if ($product->is_new || $product->is_best_seller) {
+                    $html .= '<div class="hot_best ts__03 pa">';
+
+                    if ($product->is_new) {
+                        $html .= '  <div class="hot_best_text is_new">mới</div>';
+                    }
+
+                    if ($product->is_best_seller) {
+                        $html .= '  <div class="hot_best_text is_hot">bán chạy</div>';
+                    }
+
+                    $html .= ' </div>';
+                }
+
+
+                if ($product->price_main != $product->price_pay) {
+                    $html .= '<div class="discount_percent ts__03 pa">
+                            <div class="discount_percent_text">giảm '.$product->discount .' %</div>
+                        </div>';
+                }
+
+                $html .= '<div class="nt_add_w ts__03 pa ">
+                <div class="product-love sp-love-' . $product->id . '" onclick="jssplove(this, ' . $product->id . ')">';
+
+                if ($product->isLoved()) {
+                    $html .= '  <i class="fas fa-heart active" title="Đã Yêu Thích SP"></i> ';
+                } else {
+                    $html .= ' <i class="fas fa-heart" title="Thêm SP Yêu Thích"></i>';
+                }
+
+                $html .= '</div>
+                </div>';
+
+
+                $html .= '<div class="hover_button op__0 tc pa flex column ts__03">
+                        <a href="javascript:void(0)" data-id="4540696920203" onclick="jscartdh(' . $product->id . ')"
+                        class="pr pr_atc cd br__40 bgw tc dib cb chp ttip_nt tooltip_top_left"
+                        rel="nofollow"><span class="tt_txt text-capitalize">thêm vào giỏ</span><i
+                                class="iccl iccl-cart"></i><span class="text-capitalize">thêm vào giỏ</span>
+                        </a>
+                    </div>
+                </div>';
+                $html .= '<div class="product-info mt__15">
+                <h3 class="product-title pr fs__14 mg__0 fwm"><a
+                        class="cd chp" href="' . $productHref . '">  ' . $product->getTitle() . '</a></h3>
+                <span class="price dib mb__5">';
+
+                if ($product->price_main != $product->price_pay) {
+                    $html .= '<del class="price_old">
+                    <span class="number_format">' . $product->price_main . '</span>
+                    <span class="currency_format">₫</span>
+                </del>';
+                }
+
+
+                $html .= '<ins>
+                                <span class="number_format">' . $product->price_pay . '</span>
+                                <span class="currency_format">₫</span>
+                            </ins>
+                        </span>
+                    </div>
+                </div>
+                </div>';
+                $html .= '';
+            }
+
+            $html .= '</div>';
+        }
+
+        return $html;
+    }
+
     public function getCategory()
     {
         return ProductCategory::find((int)$this->product_category_id);
@@ -196,18 +325,18 @@ class Product extends Item
             if (count($rows)) {
                 return true;
             }
-
         } else {
-            if (count($params)
+            if (
+                count($params)
                 && isset($params['phone']) && !empty($params['phone'])
-//                && isset($params['email']) && !empty($params['email'])
+                //                && isset($params['email']) && !empty($params['email'])
             ) {
                 $rows = UserCartProduct::query('user_cart_products')
                     ->leftJoin('user_carts', 'user_cart_products.cart_id', '=', 'user_carts.id')
                     ->where('user_cart_products.product_id', $this->id)
                     ->where('user_carts.user_id', 0)
                     ->where('phone', $apiCore->cleanStr($params['phone']))
-//                    ->where('email', $apiCore->cleanStr($params['email']))
+                    //                    ->where('email', $apiCore->cleanStr($params['email']))
                     ->where('user_carts.status', 'da_thanh_toan')
                     ->get();
                 if (count($rows)) {
@@ -343,9 +472,9 @@ class Product extends Item
             ->where('product_reviews.product_id', $this->id)
             ->where('product_reviews.active', 1)
             ->orderByDesc('product_reviews.id')
-//            ->orderBy('star', 'desc')
-//            ->orderBy('users.chuyen_gia', 'desc')
-            ;
+            //            ->orderBy('star', 'desc')
+            //            ->orderBy('users.chuyen_gia', 'desc')
+        ;
 
         $arr = [];
         if (count($params)) {

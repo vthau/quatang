@@ -1,12 +1,19 @@
 <?php
+
+use Illuminate\Support\Facades\Lang;
+
 $apiFE = new \App\Api\FE;
 $apiMobile = new \App\Api\Mobile;
 $isMobile = $apiMobile->isMobile();
+
+$apiCore = new \App\Api\Core;
+
 
 if (!isset($products) || !count($products)) {
     return;
 }
 
+$lastPage = $products->lastPage();
 ?>
 
 <style>
@@ -298,104 +305,68 @@ if (!isset($products) || !count($products)) {
 
     <div class="row">
         <div class="col-lg-12 col-12">
-            <div id="shopify-section-collection_page" class="shopify-section tp_se_cdt">
+            <div id="shopify-section-collection_page" class="product-list shopify-section tp_se_cdt">
                 <div class="nt_svg_loader dn"></div>
-                <div class="products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default">
-                    @foreach($products as $product)
-                        <div class="col-lg-3 col-md-3 col-12 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
-                            <div class="product-inner pr">
-                                <div class="product-image pr oh lazyloaded product-custom" >
-                                    <span class="tc nt_labels pa pe_none cw"></span>
-                                    <a class="db" href="{{$product->getHref(true)}}">
-                                        <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyloaded"
-                                             data-id="14246008717451"
-                                             data-bgset="{{$product->getAvatar()}}"
-                                             data-parent-fit="width" data-wiis="" data-ratio="0.7837837837837838"
-                                             style="padding-top: 127.586%; background-image: url('{{$product->getAvatar()}}');">
-                                            <picture style="display: none;">
-                                                <source
-                                                    data-srcset="{{$product->getAvatar()}}"
-                                                    sizes="270px"
-                                                    srcset="{{$product->getAvatar()}}">
-                                                <img alt="" class="lazyautosizes lazyloaded" data-sizes="auto"
-                                                     data-ratio="0.7837837837837838" sizes="270px"></picture>
-                                        </div>
-                                    </a>
-                                    <div class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                        <div class="pr_lazy_img back-img pa nt_bg_lz lazyloaded"
-                                             data-id="14246008750219"
-                                             data-bgset="{{$product->getAvatar()}}"
-                                             data-parent-fit="width" data-wiis="" data-ratio="0.7837837837837838"
-                                             style="padding-top: 127.586%; background-image: url('{{$product->getAvatar()}}');">
-                                            <picture style="display: none;">
-                                                <source
-                                                    data-srcset="{{$product->getAvatar()}}"
-                                                    sizes="270px"
-                                                    srcset="{{$product->getAvatar()}}">
-                                                <img alt="" class="lazyautosizes lazyloaded" data-sizes="auto"
-                                                     data-ratio="0.7837837837837838" sizes="270px"></picture>
-                                        </div>
-                                    </div>
-                                    @if($product->is_new || $product->is_best_seller)
-                                        <div class="hot_best ts__03 pa">
-                                            @if($product->is_new)
-                                                <div class="hot_best_text is_new">mới</div>
-                                            @endif
-                                            @if($product->is_best_seller)
-                                                <div class="hot_best_text is_hot">bán chạy</div>
-                                            @endif
-                                        </div>
-                                    @endif
-                                    @if ($product->price_main != $product->price_pay)
-                                        <div class="discount_percent ts__03 pa">
-                                            <div class="discount_percent_text">giảm {{$product->discount}}%</div>
-                                        </div>
-                                    @endif
-                                    <div class="nt_add_w ts__03 pa ">
-                                        <div class="product-love sp-love-{{$product->id}}" onclick="jssplove(this, {{$product->id}})">
-                                            @if ($product->isLoved())
-                                                <i class="fas fa-heart active" title="Đã Yêu Thích SP"></i>
-                                            @else
-                                                <i class="fas fa-heart" title="Thêm SP Yêu Thích"></i>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="hover_button op__0 tc pa flex column ts__03">
-                                        <a href="javascript:void(0)" data-id="4540696920203" onclick="jscartdh({{$product->id}})"
-                                           class="pr pr_atc cd br__40 bgw tc dib cb chp ttip_nt tooltip_top_left"
-                                           rel="nofollow"><span class="tt_txt text-capitalize">thêm vào giỏ</span><i
-                                                class="iccl iccl-cart"></i><span class="text-capitalize">thêm vào giỏ</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-info mt__15">
-                                    <h3 class="product-title pr fs__14 mg__0 fwm"><a
-                                            class="cd chp" href="{{$product->getHref(true)}}">{{$product->getTitle()}}</a></h3>
-                                    <span class="price dib mb__5">
-                                        @if ($product->price_main != $product->price_pay)
-                                            <del class="price_old">
-                                            <span class="number_format">{{$product->price_main}}</span>
-                                            <span class="currency_format">₫</span>
-                                        </del>
-                                        @endif
-                                       <ins>
-                                            <span class="number_format">{{$product->price_pay}}</span>
-                                            <span class="currency_format">₫</span>
-                                        </ins>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
             </div>
+            <h6 class="ajax-loading text-center mt-4">Đang tải sản phẩm....</h6>
+
         </div>
     </div>
 
-    <div class="view-more mt__100">
+    <!-- <div class="view-more mt__100">
         <div class="more-pagination">
             {{ $products->appends(request()->query())->links() }}
         </div>
-    </div>
+    </div> -->
 </div>
+
+<script>
+let page = 1;
+const lastPage = {!! json_encode($lastPage) !!};
+
+loadMoreProduct(page);
+
+window.addEventListener(
+  "scroll",
+  () => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+    if (scrollTop + clientHeight >= scrollHeight - 10) {
+        page++;
+        if(page > lastPage) return $(".ajax-loading").show().html("Đã hết sản phẩm!");
+        loadMoreProduct(page);
+    }
+  },
+  {
+    passive: true,
+  }
+);
+
+function loadMoreProduct(page) {
+  $.ajax({
+    url: "{{url('')}}" + "/load-product-more",
+    type: "get",
+    datatype: "html",
+    data: {
+      page,
+      _token: "{{csrf_token()}}",
+    },
+    beforeSend: function () {
+      $(".ajax-loading").show();
+    },
+    success: function (data) {
+      if (data.lenght == 0) return $(".ajax-loading").html("Đã hết sản phẩm!");
+
+      setTimeout(function () {
+        $(".ajax-loading").hide();
+        $(".product-list").append(data);
+      }, 1000);
+    },
+  });
+}
+
+
+</script>
+
+
 

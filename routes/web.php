@@ -142,6 +142,7 @@ Route::get('/thuong-hieu/{href}', 'FEHomeController@thuongHieuChiTiet');
 
 Route::get('/danh-muc/{href}', 'FEHomeController@danhMuc');
 Route::get('/san-pham', 'FEHomeController@sanPham');
+Route::get('/load-product-more', 'FEHomeController@loadMoreProduct');
 
 Route::get('/goc-tu-van', 'FEHomeController@tuVan');
 Route::get('/tu-van/{href}', 'FEHomeController@tuVanChiTiet');
